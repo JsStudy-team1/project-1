@@ -1,0 +1,240 @@
+* {
+  --color-font: #222;
+  --color-light-gray: #CECECE;
+  --color-gray: #D9D9D9;
+  --color-blue: #BFDEF0;
+  --color-pink: #E9CED3;
+  --color-purple: #D2CEE9;
+}
+
+body {
+  background-color: #D2CEE9;
+  color: var(--color-font);
+  font-family: "Anek Telugu", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  word-break: keep-all;
+}
+
+a {
+  text-decoration: none;
+  color: #202020;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+a,
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  color: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.nav-container {
+  background-color: #fff;
+}
+
+button,
+input {
+  outline: none !important;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+  background: transparent !important;
+  background-color: transparent !important;
+  transition: background-color 5000s ease-in-out 0s;
+  font-size: 14px !important;
+}
+
+/* a-버튼 */
+.a-button {
+  width: 80px;
+  height: 30px;
+  line-height: 2.5em;
+  text-align: center;
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+/* 보더-그레이-버튼 */
+.btn-white-border-gray {
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 3px solid var(--color-gray);
+}
+
+.btn-white-border-gray:hover {
+  box-sizing: border-box;
+  /* padding: 10px; */
+  border: 3px solid #fff;
+  background-color: var(--color-gray);
+}
+
+.btn-white-border-gray {
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 3px solid var(--color-gray);
+}
+
+.btn-white-border-gray:hover {
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  background-color: var(--color-gray);
+}
+
+/* 보더-블루-버튼 */
+
+.btn-white-border-blue {
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 3px solid var(--color-blue);
+}
+
+.btn-white-border-blue:hover {
+  box-sizing: border-box;
+  /* padding: 10px; */
+  border: 3px solid #fff;
+  background-color: var(--color-blue);
+}
+
+.btn-white-border-blue {
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 3px solid var(--color-blue);
+}
+
+.btn-white-border-blue:hover {
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  background-color: var(--color-blue);
+}
+
+/* 보더-핑크-버튼 */
+
+.btn-white-border-pink {
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 3px solid var(--color-pink);
+}
+
+.btn-white-border-pink:hover {
+  box-sizing: border-box;
+  /* padding: 10px; */
+  border: 3px solid #fff;
+  background-color: var(--color-pink);
+}
+
+.btn-white-border-pink {
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 3px solid var(--color-pink);
+}
+
+.btn-white-border-pink:hover {
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  background-color: var(--color-pink);
+}
+
+/* 보더-퍼플-버튼 */
+
+.btn-white-border-purple {
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 3px solid var(--color-purple);
+}
+
+.btn-white-border-purple:hover {
+  box-sizing: border-box;
+  /* padding: 10px; */
+  border: 3px solid #fff;
+  background-color: var(--color-purple);
+}
+
+.btn-white-border-purple {
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 3px solid var(--color-purple);
+}
+
+.btn-white-border-purple:hover {
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  background-color: var(--color-purple);
+}
+
+
+/* HEADER 기본값 */
+
+header {
+  position: relative;
+  background-color: #fff;
+}
+
+main {
+  height: 10000px;
+}
+
+.lnb-container,
+.lnb-container .container {
+  background-color: #BFDEF0;
+}
+
+#search-input {
+  border-bottom: 1px solid #222 !important;
+  /* border-radius: 0; */
+  transition: .2s ease-in !important;
+}
+
+#search-input:focus {
+  background-color: rgba(255, 255, 255, .2) !important;
+  /* border-radius: 24px; */
+}
+
+#search-btn {
+  width: 30px;
+  height: 30px;
+  
+}
+
+#search-btn:hover,
+#search-btn:active {
+  opacity: .2 !important;
+}
+
+#search-btn i {
+  line-height: 2em;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between !important;
+}
+
+.nav-item:hover {
+  background-color: rgba(0, 0, 0, .05);
+}
+
+.dropdown-menu{
+  border: none;
+  border-radius: 0;
+}
+
+/* footer */
+footer.container{
+  background: none;
+}
