@@ -50,8 +50,8 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
 <body>
   <header id="header" class="sticky-top">
     <!-- lnb -->
-    <div class="lnb-container">
-      <div class="container p-2 d-flex gap-2 justify-content-center justify-content-md-end align-items-center">
+    <div class="lnb-container mx-auto">
+      <div class="container py-2 d-flex gap-2 justify-content-center justify-content-md-end align-items-center">
         <form class="d-flex align-items-center">
           <input id="search-input" type="search" placeholder="👀주말에 어디 갈랭?" aria-label="Search">
           <a id="search-btn" class="a-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -60,8 +60,8 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
       </div>
     </div>
     <!-- nav -->
-    <nav class="navbar nav-container navbar-expand-lg">
-      <div class="container-fluid d-flex justify-content-between align-items-center">
+    <nav class="navbar nav-container p-2 navbar-expand-lg mx-auto">
+      <div class="container d-flex justify-content-between justify-content-lg-center align-items-center">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -69,10 +69,10 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
         <a class="navbar-brand" href="#">
           <img src="./img/logo_dayoff.png" alt="logo" />
         </a>
-        <div class="collapse navbar-collapse container" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">HOME</a>
+              <a class="nav-link" aria-current="page" href="#">HOME</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">WEATHER-LOOK</a>
@@ -83,8 +83,8 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
                 BEHAVE
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">EXPO</a></li>
-                <li><a class="dropdown-item" href="#">ACTIVITY</a></li>
+                <li><a class="dropdown-item col-1 href="#">EXPO</a></li>
+                <li><a class="dropdown-item col-1" href="#">ACTIVITY</a></li>
               </ul>
             </li>
           </ul>
