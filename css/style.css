@@ -14,6 +14,9 @@ body {
   font-size: 14px;
   box-sizing: border-box;
   word-break: keep-all;
+  overflow-x: none !important;
+  margin: 0 auto;
+  /* max-width: 1320px; */
 }
 
 a {
@@ -224,6 +227,16 @@ header {
 .dropdown-menu{
   border: none;
   border-radius: 0;
+  left: -30% !important;
+}
+
+.dropdown-menu.show {
+  width: 50% !important;
+}
+
+.nav-link{
+  font-size: 1.2em;
+  font-weight: 800;
 }
 
 /* MAIN */
