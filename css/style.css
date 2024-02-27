@@ -79,25 +79,12 @@ input:autofill:active {
 
 .btn-white-border-gray:hover {
   box-sizing: border-box;
-  /* padding: 10px; */
-  border: 3px solid #fff;
-  background-color: var(--color-gray);
-}
-
-.btn-white-border-gray {
-  background-color: #fff;
-  box-sizing: border-box;
-  border: 3px solid var(--color-gray);
-}
-
-.btn-white-border-gray:hover {
-  box-sizing: border-box;
+  
   border: 3px solid #fff;
   background-color: var(--color-gray);
 }
 
 /* 보더-블루-버튼 */
-
 .btn-white-border-blue {
   background-color: #fff;
   box-sizing: border-box;
@@ -106,25 +93,12 @@ input:autofill:active {
 
 .btn-white-border-blue:hover {
   box-sizing: border-box;
-  /* padding: 10px; */
-  border: 3px solid #fff;
-  background-color: var(--color-blue);
-}
-
-.btn-white-border-blue {
-  background-color: #fff;
-  box-sizing: border-box;
-  border: 3px solid var(--color-blue);
-}
-
-.btn-white-border-blue:hover {
-  box-sizing: border-box;
+  
   border: 3px solid #fff;
   background-color: var(--color-blue);
 }
 
 /* 보더-핑크-버튼 */
-
 .btn-white-border-pink {
   background-color: #fff;
   box-sizing: border-box;
@@ -133,25 +107,12 @@ input:autofill:active {
 
 .btn-white-border-pink:hover {
   box-sizing: border-box;
-  /* padding: 10px; */
-  border: 3px solid #fff;
-  background-color: var(--color-pink);
-}
-
-.btn-white-border-pink {
-  background-color: #fff;
-  box-sizing: border-box;
-  border: 3px solid var(--color-pink);
-}
-
-.btn-white-border-pink:hover {
-  box-sizing: border-box;
+  
   border: 3px solid #fff;
   background-color: var(--color-pink);
 }
 
 /* 보더-퍼플-버튼 */
-
 .btn-white-border-purple {
   background-color: #fff;
   box-sizing: border-box;
@@ -160,37 +121,68 @@ input:autofill:active {
 
 .btn-white-border-purple:hover {
   box-sizing: border-box;
-  /* padding: 10px; */
+  
   border: 3px solid #fff;
   background-color: var(--color-purple);
 }
 
-.btn-white-border-purple {
+/* 그레이-버튼 */
+.btn-gray {
+  background-color: var(--color-gray);
+  box-sizing: border-box;
+}
+
+.btn-gray:hover {
+  box-sizing: border-box;
+  border: 3px solid var(--color-gray);
   background-color: #fff;
+}
+
+/* 보더-블루-버튼 */
+.btn-blue {
+  background-color: var(--color-blue);
+  box-sizing: border-box;
+}
+
+.btn-blue:hover {
+  box-sizing: border-box;
+  border: 3px solid var(--color-blue);
+  background-color: #fff;
+}
+
+/* 핑크-버튼 */
+.btn-pink {
+  background-color: var(--color-pink);
+  box-sizing: border-box;
+}
+
+.btn-pink:hover {
+  box-sizing: border-box;
+  border: 3px solid var(--color-pink);
+  background-color: #fff;
+}
+
+/* 퍼플-버튼 */
+.btn-purple {
+  background-color: var(--color-purple);
+  box-sizing: border-box;
+}
+
+.btn-purple:hover {
   box-sizing: border-box;
   border: 3px solid var(--color-purple);
+  background-color: #fff;
 }
-
-.btn-white-border-purple:hover {
-  box-sizing: border-box;
-  border: 3px solid #fff;
-  background-color: var(--color-purple);
-}
-
 
 /* HEADER 기본값 */
 
 header {
-  position: relative;
   background-color: #fff;
 }
 
-main {
-  height: 10000px;
-}
 
 .lnb-container,
-.lnb-container .container {
+.lnb-container.container {
   background-color: #BFDEF0;
 }
 
@@ -234,7 +226,14 @@ main {
   border-radius: 0;
 }
 
-/* footer */
+/* MAIN */
+
+main {
+  height: 100vh;
+  background-color: #D2CEE9;
+}
+
+/* FOOTER 기본 값*/
 footer.container{
   background: none;
 }
