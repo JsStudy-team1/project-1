@@ -1,0 +1,9 @@
+.banner{
+  height: 100px;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+#calendar {
+width: 50%;
+height: 500px;
+}
