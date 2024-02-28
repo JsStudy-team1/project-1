@@ -13,11 +13,12 @@ form {
     padding: 10px;
 }
 
-.login-form {
+#login-form {
     background-color: white;
     border: none;
     padding: 50px;
 }
+
 
 .input-box{
     border-style: outset;
@@ -62,7 +63,7 @@ input:focus, input:not(:placeholder-shown){
     outline:none;
 }
 
-input[type=submit]{
+input[type=button]{
     color: black;
     border-radius: 5px;
     width:100%;
@@ -71,7 +72,7 @@ input[type=submit]{
     margin-top:30px;
 }
 
-input[type=submit]:hover {
+input[type=button]:hover {
     font-size: larger;
     background: white;
 }
