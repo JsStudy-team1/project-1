@@ -40,9 +40,10 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   <link rel="stylesheet" as="style" crossorigin
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <!--  -->
-  <link rel="stylesheet" href="../css/style.css">
+  <!-- <link rel="stylesheet" href="../css/style.css"> -->
   <link rel="stylesheet" href="home.css">
-  <script src="home.js"></script>
+  <script defer src="home.js"></script>
+
 <body>
   <header id="header"></header>
 
@@ -52,14 +53,30 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
       <div class="banner">
         <p class="text-center">배너</p>
       </div>
-      
-      <div id="calendar">
-
-      </div>
+      <section class="one px-4">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5 card rounded-4 shadow-4">
+          <div class="col-10 col-sm-8 col-lg-6 mx-auto">
+            <div id="calendar"></div>
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Responsive left-aligned hero with image</h1>
+            <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most
+              popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system,
+              extensive prebuilt components, and powerful JavaScript plugins.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    </section>
     </div>
   </main>
 
   <footer id="footer"></footer>
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <!-- 폰트어썸 -->
   <script src="https://kit.fontawesome.com/631dd0ab94.js" crossorigin="anonymous"></script>
   <!-- 부트스트랩 -->
@@ -68,13 +85,7 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   </script>
   <!-- 캘린더 -->
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
-  <script>
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth'
-    });
-    calendar.render();
-  </script>
+  <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js'></script>
   <!-- JS 헤더 푸터 -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {

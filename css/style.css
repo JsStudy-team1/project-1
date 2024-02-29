@@ -41,12 +41,16 @@ select:focus {
   background-color: #fff;
 }
 
-button,
+/* button,
 input {
   outline: none !important;
   border: none !important;
   background: none !important;
   box-shadow: none !important;
+} */
+button {
+  font-weight: 800 !important;
+  
 }
 
 input:-webkit-autofill,
@@ -124,7 +128,6 @@ input:autofill:active {
 
 .btn-white-border-purple:hover {
   box-sizing: border-box;
-  
   border: 3px solid #fff;
   background-color: var(--color-purple);
 }
@@ -132,18 +135,19 @@ input:autofill:active {
 /* 그레이-버튼 */
 .btn-gray {
   background-color: var(--color-gray);
+  font-weight: 800;
   box-sizing: border-box;
 }
 
 .btn-gray:hover {
   box-sizing: border-box;
-  border: 3px solid var(--color-gray);
   background-color: #fff;
 }
 
 /* 보더-블루-버튼 */
 .btn-blue {
   background-color: var(--color-blue);
+  font-weight: 800;
   box-sizing: border-box;
 }
 
@@ -156,6 +160,7 @@ input:autofill:active {
 /* 핑크-버튼 */
 .btn-pink {
   background-color: var(--color-pink);
+  font-weight: 800;
   box-sizing: border-box;
 }
 
@@ -240,11 +245,6 @@ header {
 }
 
 /* MAIN */
-
-main {
-  height: 100vh;
-  background-color: #D2CEE9;
-}
 
 /* FOOTER 기본 값*/
 footer.container{
