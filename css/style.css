@@ -30,11 +30,22 @@ a,
 input:focus,
 button:focus,
 textarea:focus,
-select:focus {
+select:focus,
+input {
   color: none !important;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
+}
+
+input {
+  box-sizing: border-box;
+  border-bottom: 1px solid #000 !important;
+}
+
+input:focus {
+  box-sizing: border-box;
+  border-bottom: 1px solid #000 !important;
 }
 
 .nav-container {
@@ -48,9 +59,9 @@ input {
   background: none !important;
   box-shadow: none !important;
 } */
+
 button {
   font-weight: 800 !important;
-  
 }
 
 input:-webkit-autofill,
@@ -86,7 +97,6 @@ input:autofill:active {
 
 .btn-white-border-gray:hover {
   box-sizing: border-box;
-  
   border: 3px solid #fff;
   background-color: var(--color-gray);
 }
@@ -100,7 +110,6 @@ input:autofill:active {
 
 .btn-white-border-blue:hover {
   box-sizing: border-box;
-  
   border: 3px solid #fff;
   background-color: var(--color-blue);
 }
@@ -114,7 +123,6 @@ input:autofill:active {
 
 .btn-white-border-pink:hover {
   box-sizing: border-box;
-  
   border: 3px solid #fff;
   background-color: var(--color-pink);
 }
@@ -137,18 +145,21 @@ input:autofill:active {
   background-color: var(--color-gray);
   font-weight: 800;
   box-sizing: border-box;
+  border: 3px solid #FFF;
 }
 
 .btn-gray:hover {
   box-sizing: border-box;
+  border: 3px solid var(--color-gray);
   background-color: #fff;
 }
 
-/* 보더-블루-버튼 */
+/* 블루-버튼 */
 .btn-blue {
   background-color: var(--color-blue);
   font-weight: 800;
   box-sizing: border-box;
+  border: 3px solid #FFF;
 }
 
 .btn-blue:hover {
@@ -162,6 +173,7 @@ input:autofill:active {
   background-color: var(--color-pink);
   font-weight: 800;
   box-sizing: border-box;
+  border: 3px solid #FFF;
 }
 
 .btn-pink:hover {
@@ -174,6 +186,7 @@ input:autofill:active {
 .btn-purple {
   background-color: var(--color-purple);
   box-sizing: border-box;
+  border: 3px solid #FFF;
 }
 
 .btn-purple:hover {
@@ -188,13 +201,15 @@ header {
   background-color: #fff;
 }
 
-
 .lnb-container,
 .lnb-container.container {
   background-color: #BFDEF0;
 }
 
 #search-input {
+  background: none;
+  outline: none;
+  border: none;
   border-bottom: 1px solid #222 !important;
   /* border-radius: 0; */
   transition: .2s ease-in !important;
@@ -225,6 +240,10 @@ header {
   justify-content: space-between !important;
 }
 
+button.navbar-toggler{
+  border: none;
+}
+
 .nav-item:hover {
   background-color: rgba(0, 0, 0, .05);
 }
@@ -233,10 +252,6 @@ header {
   border: none;
   border-radius: 0;
   left: -30% !important;
-}
-
-.dropdown-menu.show {
-  width: 50% !important;
 }
 
 .nav-link{

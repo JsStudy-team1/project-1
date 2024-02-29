@@ -37,9 +37,9 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   <link
     href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:wght@400;700;900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" as="style" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <!--  -->
+  <!-- 스와이퍼 js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- <link rel="stylesheet" href="../css/style.css"> -->
   <link rel="stylesheet" href="home.css">
   <script defer src="home.js"></script>
@@ -50,33 +50,48 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   <main>
     <div class="container">
 
-      <div class="banner">
-        <p class="text-center">배너</p>
-      </div>
-      <section class="one px-4">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5 card rounded-4 shadow-4">
-          <div class="col-10 col-sm-8 col-lg-6 mx-auto">
-            <div id="calendar"></div>
+      <section id="banner" class="my-5">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <section class="one px-3 px-md-4">
+        <div class="row flex-lg-row-reverse align-items-center py-5">
+          <div id="calendar" class="col-12 col-lg-6 mx-auto mb-lg-auto mb-5 px-md-3 px-auto py-5">
           </div>
           <div class="col-lg-6">
-            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Responsive left-aligned hero with image</h1>
-            <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most
-              popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system,
-              extensive prebuilt components, and powerful JavaScript plugins.</p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">그래서, 오늘은 뭐해?</h1>
+            <div class="title-input-area">
+              <label for="title"> 할 일
+                <input type="text" />
+              </label>
+            </div>
+            <div class="start-input-area">
+              <label for="start"> DATE
+                <input type="text" />
+              </label>
+            </div>
+            <div class="d-grid mt-3 d-md-flex justify-content-md-center justify-content-lg-start">
+              <button type="button" id="go-btn" class="btn-white-border-pink btn-lg">go</button>
             </div>
           </div>
         </div>
-    </div>
-    </section>
+      </section>
     </div>
   </main>
 
   <footer id="footer"></footer>
-  <!-- axios -->
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!-- 스와이퍼 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- 폰트어썸 -->
   <script src="https://kit.fontawesome.com/631dd0ab94.js" crossorigin="anonymous"></script>
   <!-- 부트스트랩 -->
