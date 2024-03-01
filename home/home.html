@@ -40,16 +40,26 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   <!--  -->
   <!-- 스와이퍼 js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- <link rel="stylesheet" href="../css/style.css"> -->
-  <link rel="stylesheet" href="home.css">
+
+  <!-- 메인 -->
+  <link rel="stylesheet" href="home.css" />
   <script defer src="home.js"></script>
+  <!-- #banner -->
+  <link rel="stylesheet" href="slide/slide.css" />
+  <script defer src="slide/slide.js"></script>
+  <!-- #todolist -->
+  <link rel="stylesheet" href="todolist/todolist.css" />
+  <script defer src="todolist/todolist.js"></script>
+<!-- #calendar -->
+  <link rel="stylesheet" href="calendar/calendar.css" />
+  <script defer src="calendar/calendar.js"></script>
 
 <body>
   <header id="header"></header>
 
   <main>
     <div class="container">
-
+<!-- #banner -->
       <section id="banner" class="my-5">
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
@@ -63,28 +73,16 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
         </div>
       </section>
 
-      <section class="one px-3 px-md-4">
-        <div class="row flex-lg-row-reverse align-items-center py-5">
+      <section id="contents" class="px-3 px-md-4">
+        <div class="row flex-lg-row align-items-center py-5">
           <div id="calendar" class="col-12 col-lg-6 mx-auto mb-lg-auto mb-5 px-md-3 px-auto py-5">
           </div>
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">그래서, 오늘은 뭐해?</h1>
-            <div class="title-input-area">
-              <label for="title"> 할 일
-                <input type="text" />
-              </label>
-            </div>
-            <div class="start-input-area">
-              <label for="start"> DATE
-                <input type="text" />
-              </label>
-            </div>
-            <div class="d-grid mt-3 d-md-flex justify-content-md-center justify-content-lg-start">
-              <button type="button" id="go-btn" class="btn-white-border-pink btn-lg">go</button>
-            </div>
+          <div class="col-6">
           </div>
-        </div>
       </section>
+    </div>
+    </div>
+    </section>
     </div>
   </main>
 
@@ -102,53 +100,6 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js'></script>
   <!-- JS 헤더 푸터 -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const loadComponent = function (url, callback) {
-        const xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-            callback(xhr.responseText);
-          }
-        };
-        xhr.open('GET', url, true);
-        xhr.send();
-      };
-
-      const headerEl = document.getElementById('header');
-      if (headerEl) {
-        loadComponent('../component/header.html', function (headerContent) {
-          headerEl.innerHTML = headerContent;
-        });
-      };
-
-      const footerEl = document.getElementById('footer');
-      if (footerEl) {
-        // 'component/footer.html' 파일 로드
-        loadComponent('../component/footer.html', function (footerContent) {
-          // 새로운 div 요소를 생성합니다.
-          const tempDiv = document.createElement('div');
-
-          // 새로운 div에 HTML 내용을 설정
-          tempDiv.innerHTML = footerContent;
-
-          // tempDiv의 자식 노드들을 footerEl에 추가
-          while (tempDiv.firstChild) {
-            footerEl.appendChild(tempDiv.firstChild);
-          }
-
-          // this-year 클래스를 가진 요소 가져오기
-          const thisYear = document.querySelector('.this-year');
-
-          // this-year 요소에 현재 연도로 설정
-          if (thisYear) {
-            // console.log('thisYear:', thisYear);
-            thisYear.textContent = new Date().getFullYear();
-          }
-        });
-      }
-    });
-  </script>
 </body>
 
 </html>

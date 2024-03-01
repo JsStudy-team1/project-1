@@ -1,0 +1,9 @@
+#calendar {
+background-color: #fff;
+}
+
+#calendar button{
+  color: #222;
+  background: var(--color-pink) !important;
+  box-sizing: border-box !important;
+}
