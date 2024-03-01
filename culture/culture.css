@@ -1,0 +1,18 @@
+.menus {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    flex-wrap: wrap;
+}
+
+p{
+    white-space:pre-wrap;
+}
+
+.card-title{
+    font-size: 2em;
+}
+
+.card{
+    padding: 12px 12px;
+}

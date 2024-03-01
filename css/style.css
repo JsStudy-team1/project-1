@@ -16,8 +16,9 @@ body {
   word-break: keep-all;
   overflow-x: none !important;
   margin: 0 auto;
-  /* max-width: 1320px; */
+  /* max-width: 1320px;*/
 }
+
 
 a {
   text-decoration: none;
@@ -48,6 +49,7 @@ input {
   background: none !important;
   box-shadow: none !important;
 }
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -241,10 +243,11 @@ header {
 
 /* MAIN */
 
-main {
+/*main {
   height: 100vh;
   background-color: #D2CEE9;
 }
+*/
 
 /* FOOTER 기본 값*/
 footer.container{
