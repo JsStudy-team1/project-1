@@ -5,51 +5,61 @@ menus.forEach(menu=>menu.addEventListener("click",(event)=>getCultureByCategory(
 let totalResults = 0
 let page = 1
 const pageSize =10
-const pageGroup=5
-
-//받은 json파일 사용
-// const getDataApi = async() => {
-//     const data = await fetch('culture.json')
-//     const data1 = await data.json()
-//     console.log("data",data)
-
-// }
-// getDataApi()
+const groupSize=5
+let url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20`)
 
 
-
-const getLatestCulture = async () =>{
-    const url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20`)
+const getCulture = async () => {
+    url.searchParams.set("INDEX",page)  
+    url.searchParams.set("pageSize",pageSize)
+    
     const response = await fetch(url)
     const data = await response.json()
     cultureList = data.culturalEventInfo.row
+    totalResults = data.culturalEventInfo.list_total_count
+    render()
+
+    pagiNationRender()
+}
+
+
+const getLatestCulture = async () =>{
+    url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20`)
+    const response = await fetch(url)
+    const data = await response.json()
+    cultureList = data.culturalEventInfo.row
+    totalResults = data.culturalEventInfo.list_total_count
+    console.log("데이터",data)
+    console.log("total",totalResults)
     render()
 };
 
 const getCultureByCategory =async (event) => {
     const category = event.target.textContent
-    const url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20/${category}`)
+    url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20/${category}`)
     const response = await fetch(url)
     const data = await response.json()
-    console.log("ddd",data)
     cultureList = data.culturalEventInfo.row
+    totalResults = data.culturalEventInfo.list_total_count
+    console.log("카테고리total",totalResults)
     render()
 }
 
 const getCultureByKeyword = async () => {
     const keyword = document.getElementById("search-input").value
-    const url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20/${keyword}/${keyword}`)
+    url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20/${keyword}/${keyword}`)
     const response = await fetch(url)
     const data = await response.json()
-    console.log("keyword",data)
     cultureList = data.culturalEventInfo.row
+    totalResults = data.culturalEventInfo.list_total_count
+    console.log("키워드total",totalResults)
     render()
 }
 
 const render = () =>{
     let cultureHTML = cultureList.map((item) => 
         `<div class = "row">
-            <div class = "col-lg-3 col-md-6 col-sm-12">
+            <div class = "col">
                 <div class="card" style="width: 18rem;">
                     <img src="${item.MAIN_IMG}" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
@@ -68,10 +78,53 @@ const render = () =>{
     document.getElementById("culture-board").innerHTML = cultureHTML;
 };
 
+const paginationRender = ()=>{
+    const totalPages = Math.ceil(totalResults / pageSize);
+    const pageGroup = Math.ceil(page/groupSize);
+    let lastPage = pageGroup * groupSize;
+        if(lastPage > totalPages){
+            lastPage = totalPages;
+        }
+    let firstPage = lastPage - 4 <= 0 ? 1 : lastPage - 4; // 첫그룹이 5이하이면
+    let paginationHTML = ''
+  
+    if(firstPage >=6){ 
+      paginationHTML += `<li class="page-item" onclick ="moveToPage(1)"><a class="page-link" href='#js-bottom'>&lt;&lt;</a></li>
+                      <li class="page-item" onclick ="moveToPage(${page-1})"><a class="page-link" href='#js-bottom'><</a></li>`
+    }
+    
+    for (let i = firstPage; i <=lastPage; i++){
+      paginationHTML+=`<li class="page-item ${i===page?'active':''}"  onclick="moveToPage(${i})"><a class="page-link" href='#js-bottom'>${i}</a></li>`
+    } 
 
-const pageNationRender = () => {
+    if(lastPage < totalPages){
+      paginationHTML += `<li class="page-item" onclick ="moveToPage(${page+1})"><a class="page-link" href='#js-bottom'>&gt;</a></li>
+                        <li class="page-item" onclick ="moveToPage(${totalPages})"><a class="page-link" href='#js-bottom'>&gt;&gt;</a></li>`
+    }
+    document.querySelector(".pagination").innerHTML=paginationHTML
+  };
+  
+/*
+const pagiNationRender = () => {
+    const totalPages = Math.ceil(totalResults / pageSize);
+    const pageGroup = Math.ceil(page/groupSize);
+    const lastPage = pageGroup * groupSize
+    const firstPage = lastPage - (groupSize -1)
+    let paginationHTML=``
+
+    for(let i = firstPage; i<=lastPage; i++){
+    paginationHTML += `<li class="page-item" onclick = "moveToPage(${i})">< class="page-link">${i}</li>`
+    }
+    document.querySelector(".pagination").innerHTML=paginationHTML
 
 }
+
+const moveToPage = (pageNum) =>{
+    page = pageNum
+    getCulture()
+}
+*/
+
 getLatestCulture()
 
 // 데이터 culturalEventInfo 필드에 있음
@@ -93,3 +146,11 @@ getLatestCulture()
 //실내 = 교육/체험,전시/미술,뮤지컬/오페라,기타,연극,무용,영화,국악,콘서트,클래식,독주/독창회
 
 //실외 = 축제-문화/예술,축제-전통/역사,축제-시민화합,축제-기타,축제-자연/경관
+
+//받은 json파일 사용
+// const getDataApi = async() => {
+//     const data = await fetch('culture.json')
+//     const data1 = await data.json()
+//     console.log("data",data)
+// }
+// getDataApi()
