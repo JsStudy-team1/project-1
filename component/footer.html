@@ -53,7 +53,7 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
 
     <a href="/"
       class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-      <img src="./img/logo_dayoff.png" alt="logo">
+      <img src="../img/logo_dayoff.png" alt="logo">
     </a>
 
     <ul class="nav col-md-4 justify-content-end">
@@ -69,6 +69,7 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   <script>
     // 요소 검색 → thisYear 라고 선언
     const thisYear = document.querySelector('.this-year');
+    console.log("thisYear : ", );
 
     // textContent라는 속성에는 그 요소가 가지고 있는 말 그대로 글자 내용들의 값을 알아내거나 값을 지정하는 용도로 사용 가능
     thisYear.textContent = new Date().getFullYear(); // 올해의 연도를 숫자로 가져옴
