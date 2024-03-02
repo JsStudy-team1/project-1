@@ -1,0 +1,16 @@
+#to_do_container {
+  border-radius: 30px;
+  height: 100%;
+}
+
+#cur_date {
+  /* height: 30px; */
+  text-align: center;
+  font-weight: 800;
+  font-size: 2em;
+  line-height: 1.8em;
+}
+
+#to_do_list li {
+  padding: 3% 0;
+}

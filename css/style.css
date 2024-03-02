@@ -30,23 +30,38 @@ a,
 input:focus,
 button:focus,
 textarea:focus,
-select:focus {
+select:focus,
+input {
   color: none !important;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
 }
 
+input {
+  box-sizing: border-box;
+  border-bottom: 1px solid #000 !important;
+}
+
+input:focus {
+  box-sizing: border-box;
+  border-bottom: 1px solid #000 !important;
+}
+
 .nav-container {
   background-color: #fff;
 }
 
-button,
+/* button,
 input {
   outline: none !important;
   border: none !important;
   background: none !important;
   box-shadow: none !important;
+} */
+
+button {
+  font-weight: 800 !important;
 }
 
 input:-webkit-autofill,
@@ -82,7 +97,6 @@ input:autofill:active {
 
 .btn-white-border-gray:hover {
   box-sizing: border-box;
-  
   border: 3px solid #fff;
   background-color: var(--color-gray);
 }
@@ -96,7 +110,6 @@ input:autofill:active {
 
 .btn-white-border-blue:hover {
   box-sizing: border-box;
-  
   border: 3px solid #fff;
   background-color: var(--color-blue);
 }
@@ -110,7 +123,6 @@ input:autofill:active {
 
 .btn-white-border-pink:hover {
   box-sizing: border-box;
-  
   border: 3px solid #fff;
   background-color: var(--color-pink);
 }
@@ -124,7 +136,6 @@ input:autofill:active {
 
 .btn-white-border-purple:hover {
   box-sizing: border-box;
-  
   border: 3px solid #fff;
   background-color: var(--color-purple);
 }
@@ -132,7 +143,9 @@ input:autofill:active {
 /* 그레이-버튼 */
 .btn-gray {
   background-color: var(--color-gray);
+  font-weight: 800;
   box-sizing: border-box;
+  border: 3px solid #FFF;
 }
 
 .btn-gray:hover {
@@ -141,10 +154,12 @@ input:autofill:active {
   background-color: #fff;
 }
 
-/* 보더-블루-버튼 */
+/* 블루-버튼 */
 .btn-blue {
   background-color: var(--color-blue);
+  font-weight: 800;
   box-sizing: border-box;
+  border: 3px solid #FFF;
 }
 
 .btn-blue:hover {
@@ -156,7 +171,9 @@ input:autofill:active {
 /* 핑크-버튼 */
 .btn-pink {
   background-color: var(--color-pink);
+  font-weight: 800;
   box-sizing: border-box;
+  border: 3px solid #FFF;
 }
 
 .btn-pink:hover {
@@ -169,6 +186,7 @@ input:autofill:active {
 .btn-purple {
   background-color: var(--color-purple);
   box-sizing: border-box;
+  border: 3px solid #FFF;
 }
 
 .btn-purple:hover {
@@ -183,13 +201,15 @@ header {
   background-color: #fff;
 }
 
-
 .lnb-container,
 .lnb-container.container {
   background-color: #BFDEF0;
 }
 
 #search-input {
+  background: none;
+  outline: none;
+  border: none;
   border-bottom: 1px solid #222 !important;
   /* border-radius: 0; */
   transition: .2s ease-in !important;
@@ -220,6 +240,10 @@ header {
   justify-content: space-between !important;
 }
 
+button.navbar-toggler{
+  border: none;
+}
+
 .nav-item:hover {
   background-color: rgba(0, 0, 0, .05);
 }
@@ -230,10 +254,6 @@ header {
   left: -30% !important;
 }
 
-.dropdown-menu.show {
-  width: 50% !important;
-}
-
 .nav-link{
   font-size: 1.2em;
   font-weight: 800;
@@ -241,12 +261,8 @@ header {
 
 /* MAIN */
 
-main {
-  height: 100vh;
-  background-color: #D2CEE9;
-}
-
 /* FOOTER 기본 값*/
 footer.container{
   background: none;
+
 }
