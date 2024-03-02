@@ -25,4 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function addEvetnToCalendar(event) {
   calendar.addEvent(event);
+  // todolist.js의 현재 클릭된 날짜의 date값 셋팅
+  loadCurrentTodo();
 }
