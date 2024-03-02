@@ -15,11 +15,9 @@ function fetchWeather(city) {
         const tempInCelsius = data.main.temp - 273.15;
         document.getElementById('temperature').textContent = tempInCelsius.toFixed(2);
         
-        // 아이콘 정보를 가져와서 이미지 URL을 구성
         const iconCode = data.weather[0].icon;
         const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
         
-        // 이미지 태그의 src 속성을 업데이트
         document.getElementById('weather-icon').src = iconUrl;
         let imageName; // 온도에 따른 이미지 이름 초기화
         switch (true) {
@@ -60,7 +58,7 @@ function fetchWeather(city) {
 document.getElementById('city-select').addEventListener('change', function() {
     // '지역 선택' 옵션이 선택된 경우가 아니라면 날씨 정보를 표시
     if (this.value !== '지역 선택') {
-        document.getElementById('weather').style.display = 'block'; // 또는 'flex', 상황에 맞게
+        document.getElementById('weather').style.display = 'block';
         fetchWeather(this.value);
     } else {
         // '지역 선택'이 다시 선택된 경우 날씨 영역을 숨김
