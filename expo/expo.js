@@ -9,9 +9,9 @@ let response = '';  //json파일 가져오기
 const getCardMvp = () => {
     let mvpJson = [
         {
-        "title" : "롯데월드 어드벤처",
-        "link" : "https://adventure.lotteworld.com/kor/main/index.do",
-        "img" : "https://dimg.donga.com/wps/SPORTS/IMAGE/2023/10/29/121917476.2.jpg"
+        "title" : "덕산 스플라스 리솜 스파",
+        "link" : "https://www.resom.co.kr/spa/theme/spa.asp?ver=1",
+        "img" : "https://www.resom.co.kr/spa/images/img/RomanticSpa_new_new.jpg"
         },
         {
             "title" : "곤지암 리조트 스키장",
@@ -19,14 +19,14 @@ const getCardMvp = () => {
             "img" : "https://www.konjiamresort.co.kr/common/images/gallery/pic-ski-05.jpg"
         },
         {
-            "title" : "곤지암 리조트 스키장",
-            "link" : "https://www.konjiamresort.co.kr/ski/useInfo.dev",
-            "img" : "https://www.konjiamresort.co.kr/common/images/gallery/pic-ski-05.jpg"
+            "title" : "알프스 얼음분수축제",
+            "link" : "http://www.alpsvill.com/71",
+            "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJjADvEFjB-OteKtaxzRF7SWwBEPBLtTGfw&usqp=CAU"
         },
         {
-            "title" : "곤지암 리조트 스키장",
-            "link" : "https://www.konjiamresort.co.kr/ski/useInfo.dev",
-            "img" : "https://www.konjiamresort.co.kr/common/images/gallery/pic-ski-05.jpg"
+            "title" : "함백산 눈꽃 등산",
+            "link" : "https://map.naver.com/p/entry/place/11491571?lng=128.91764490000187&lat=37.16117649999902&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh",
+            "img" : "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20151205_152%2Fok3kch_14492848119839jqC2_JPEG%2F%25B2%25D9%25B9%25CC%25B1%25E2_1DSC00223.JPG&type=sc960_832"
         }
     ];
 
@@ -38,10 +38,11 @@ const getCardMvp = () => {
 }
 
 const mvpRender = () => {
-    const mvpHTML = mvpList.map(mvp => `<a class="card" style="width: 18rem; href="${mvp.link}">
-    <img src="${mvp.img}" class="card-img" alt="...">
+    const mvpHTML = mvpList.map(mvp => `<a class="card mvpCard" style="width: 18rem;" href="${mvp.link}">
+    <div class="mvp-motion">
+    <img src="${mvp.img}" class="card-img mvpCard-img" alt="..."></div>
     <div class="card-body">
-      <h5 class="card-title">${mvp.title}</h5>
+      <h5 class="card-title mvpCard-title">${mvp.title}</h5>
     </div>
   </a>`
     ).join("");
