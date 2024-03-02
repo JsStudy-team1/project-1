@@ -59,8 +59,8 @@ const getCardSlide = async() => {
 
     // const data = await response.json();
 
-    response = await fetch('test.json');
-    const response1 = await fetch('future.json');
+    response = await fetch('expoJson/test.json');
+    const response1 = await fetch('expoJson/future.json');
     const data = await response.json();
     const data1 = await response1.json();
 
@@ -103,7 +103,7 @@ function slideRender() {
 
 /* 자연 */
 const getNCardNature =  async() => {
-    response = await fetch('seoulPark.json');
+    response = await fetch('expoJson/seoulPark.json');
     const infoData = await response.json();
     console.log("data : ", infoData.DATA);
 
@@ -134,7 +134,7 @@ function cardNatureRender() {
 
 /* 엔터테인먼트 */
 const getNCardEntertain =  async() => {
-    response = await fetch('seoulPark.json');
+    response = await fetch('expoJson/seoulPark.json');
     console.log("response : ", response);
     const infoData = await response.json();
     console.log("data : ", infoData.DATA);
