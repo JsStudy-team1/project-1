@@ -21,12 +21,40 @@ function fetchWeather(city) {
         
         // 이미지 태그의 src 속성을 업데이트
         document.getElementById('weather-icon').src = iconUrl;
-      })
-      .catch(error => {
+        let imageName; // 온도에 따른 이미지 이름 초기화
+        switch (true) {
+            case (tempInCelsius <= 0):
+                imageName = 'boots.png'; // 매우 추운 날씨
+                break;
+            case (tempInCelsius > 0 && tempInCelsius <= 5):
+                imageName = 'hoodJacket.png'; // 쌀쌀한 날씨
+                break;
+            case (tempInCelsius > 0 && tempInCelsius <= 10):
+              imageName = 'longbeanie.png'; // 쌀쌀한 날씨
+              break;
+            case (tempInCelsius > 0 && tempInCelsius <= 15):
+              imageName = 'skirt.png'; // 쌀쌀한 날씨
+              break;
+            case (tempInCelsius > 10 && tempInCelsius <= 20):
+                imageName = 'coat.png'; // 따뜻한 날씨
+                break;
+            case (tempInCelsius > 20):
+                imageName = 'halfShirt.png'; // 더운 날씨
+                break;
+            default:
+                imageName = 'hoodie.png'; // 기본 이미지
+        }
+
+        // 조건에 따른 이미지 URL 구성 및 이미지 태그의 src 속성 업데이트
+        const imageUrl = `./images/${imageName}`;
+        document.getElementById('condition-icon').src = imageUrl; // 'condition-icon'은 조건에 따른 이미지를 표시할 요소의 ID
+    })
+    .catch(error => {
         console.error('요청 중 문제가 발생했습니다:', error);
         document.getElementById('temperature').textContent = 'Error';
-      });
+    });
 }
+
 
 // 셀렉트 메뉴 값 변경 시 날씨 정보 업데이트
 document.getElementById('city-select').addEventListener('change', function() {
@@ -39,3 +67,5 @@ document.getElementById('city-select').addEventListener('change', function() {
         document.getElementById('weather').style.display = 'none';
     }
 });
+
+

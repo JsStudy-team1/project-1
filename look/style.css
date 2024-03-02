@@ -36,6 +36,14 @@
 #weather-icon {
     width: 80px;
 }
+.clothes-container {
+  width: 400px;
+  display: block;
+
+  img {
+    width: 200px;
+  }
+}
 
 * {
     --color-font: #222;
