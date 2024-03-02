@@ -10,50 +10,33 @@ let url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEvent
 
 
 const getCulture = async () => {
-    url.searchParams.set("INDEX",page)  
-    url.searchParams.set("pageSize",pageSize)
+    // url.searchParams.set("INDEX",page)  
+    // url.searchParams.set("pageSize",pageSize)
     
     const response = await fetch(url)
     const data = await response.json()
     cultureList = data.culturalEventInfo.row
     totalResults = data.culturalEventInfo.list_total_count
     render()
-
-    pagiNationRender()
+    paginationRender()
 }
 
 
 const getLatestCulture = async () =>{
     url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20`)
-    const response = await fetch(url)
-    const data = await response.json()
-    cultureList = data.culturalEventInfo.row
-    totalResults = data.culturalEventInfo.list_total_count
-    console.log("데이터",data)
-    console.log("total",totalResults)
-    render()
+    getCulture();
 };
 
 const getCultureByCategory =async (event) => {
     const category = event.target.textContent
     url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20/${category}`)
-    const response = await fetch(url)
-    const data = await response.json()
-    cultureList = data.culturalEventInfo.row
-    totalResults = data.culturalEventInfo.list_total_count
-    console.log("카테고리total",totalResults)
-    render()
+    getCulture();
 }
 
 const getCultureByKeyword = async () => {
     const keyword = document.getElementById("search-input").value
-    url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20/${keyword}/${keyword}`)
-    const response = await fetch(url)
-    const data = await response.json()
-    cultureList = data.culturalEventInfo.row
-    totalResults = data.culturalEventInfo.list_total_count
-    console.log("키워드total",totalResults)
-    render()
+    url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/100/${category}/${keyword}`)
+    getCulture();
 }
 
 const render = () =>{
@@ -67,7 +50,7 @@ const render = () =>{
 장소 : ${item.PLACE}
 날짜/시간 : ${item.DATE}
 이용대상 : ${item.USE_TRGT}</p>
-                        <a href="${item.ORG_LINK}" class="card-link">홈페이지 바로가기</a>
+                        <a href="${item.ORG_LINK}" class="card-link" target="_blank">홈페이지 바로가기</a>
                     </div>
                 </div>
             </div>`
@@ -76,14 +59,49 @@ const render = () =>{
     document.getElementById("culture-board").innerHTML = cultureHTML;
 };
 
+function paginateData(totalResults, pageSize) {
+    let paginatedData = [];
+    for (let i = 0; i < totalResults.length; i += pageSize) {
+        paginatedData.push(totalResults.slice(i, i + pageSize));
+    }
+    return paginatedData;
+}
+
+// 예시 데이터 (100개의 숫자)
+apiData = Array.from({ length: 100 }, (_, i) => i + 1);
+
+// 페이지네이션된 데이터
+let paginatedData = paginateData(apiData, 10);
+
+// 각 페이지의 데이터 출력
+paginatedData.forEach((page, index) => {
+    console.log(`페이지 ${index + 1}:`, page);
+});
+
 const paginationRender = ()=>{
+    //totalResults
+    //page
+    //pageSize
+    //groupSize
+    //totalPages   총 페이지 수(14pages) = (총결과값(ex.134)/한페이지에 보여줄 컨텐츠 수(10개))
     const totalPages = Math.ceil(totalResults / pageSize);
+  
+    //pageGroup    현재 페이지 그룹(3개)  = (현재 페이지 (ex.12)/페이지 몇개 단위로 보여줄거니(5개))
     const pageGroup = Math.ceil(page/groupSize);
+  
+    //lastPage     마지막 페이지(15pages) = (현재 페이지 그룹(3개) * 페이지 몇개 단위로 보여줄거니(5개))
     let lastPage = pageGroup * groupSize;
-        if(lastPage > totalPages){
-            lastPage = totalPages;
-        }
+  
+    //총 페이지 수가(14pages) 마지막 페이지(15pages)보다 작다면 lastpage(14) <= (14)totalpage
+    if(lastPage > totalPages){
+      lastPage = totalPages;
+    }
+    
+    //firstPage //0보다 작으면 1로. 아니면 계산값 그대로
+    //const firstPage = lastPage - (groupSize-1) <=0? 1 : lastPage - (groupSize-1); 
     let firstPage = lastPage - 4 <= 0 ? 1 : lastPage - 4; // 첫그룹이 5이하이면
+    
+    
     let paginationHTML = ''
   
     if(firstPage >=6){ 
@@ -93,35 +111,21 @@ const paginationRender = ()=>{
     
     for (let i = firstPage; i <=lastPage; i++){
       paginationHTML+=`<li class="page-item ${i===page?'active':''}"  onclick="moveToPage(${i})"><a class="page-link" href='#js-bottom'>${i}</a></li>`
-    } 
-
+    } //1부터 마지막페이지 까지 반복. 선택된 페이지를 paginationHTML에 입력
+    //${i===page?'active':''} 현재 페이지네이션에 엑티브 클래스 주기 / 클래스 "" 안에 입력해야함!
+  
     if(lastPage < totalPages){
       paginationHTML += `<li class="page-item" onclick ="moveToPage(${page+1})"><a class="page-link" href='#js-bottom'>&gt;</a></li>
                         <li class="page-item" onclick ="moveToPage(${totalPages})"><a class="page-link" href='#js-bottom'>&gt;&gt;</a></li>`
     }
     document.querySelector(".pagination").innerHTML=paginationHTML
   };
-  
-/*
-const pagiNationRender = () => {
-    const totalPages = Math.ceil(totalResults / pageSize);
-    const pageGroup = Math.ceil(page/groupSize);
-    const lastPage = pageGroup * groupSize
-    const firstPage = lastPage - (groupSize -1)
-    let paginationHTML=``
-
-    for(let i = firstPage; i<=lastPage; i++){
-    paginationHTML += `<li class="page-item" onclick = "moveToPage(${i})">< class="page-link">${i}</li>`
-    }
-    document.querySelector(".pagination").innerHTML=paginationHTML
-
-}
 
 const moveToPage = (pageNum) =>{
     page = pageNum
     getCulture()
 }
-*/
+
 
 getLatestCulture()
 

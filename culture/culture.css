@@ -67,6 +67,54 @@ p{
     background-color: #fff;
  }
 
+ .input-group{
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+ }
+
+ #search-input {
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #222 !important;
+    /* border-radius: 0; */
+    transition: .2s ease-in !important;
+  }
+  
+  #search-input:focus {
+    background-color: rgba(255, 255, 255, .2) !important;
+    /* border-radius: 24px; */
+  }
+  
+  #search-btn {
+    width: 30px;
+    height: 30px;
+    
+  }
+  
+  #search-btn:hover,
+  #search-btn:active {
+    opacity: .2 !important;
+  }
+  
+  #search-btn i {
+    line-height: 2em;
+  }
+
+  .pagination {
+    margin-top: 1em;
+  }
+  
+  .page-item .page-link{
+      background-color: #D2CEE9;
+      color: #222;
+      border-color: #efebe6;
+  }
+  
+  .page-item:active{
+      background-color:#fff;
+  }
 @media screen and (max-width: 768px) {
     .card{
         padding: 12px 12px;

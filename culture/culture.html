@@ -69,28 +69,24 @@
               <div class="card-body">
                 <h3 class="card-title">Card title</h3>
                 <p class="card-text">Some quick example text</p>
-                <a href="#" class="card-link">홈페이지 바로가기</a>
+                <a href="#" class="card-link" target="_blank">홈페이지 바로가기</a>
               </div>
             </div>
           </div>
       </section>
 
-      <div>
-        <input id ="search-input"/>
-        <button onclick= "getCultureByKeyword()">검색</button>
+      <div class = "input-group">
+        <input id="search-input" type="search" placeholder="검색어를 입력하세요" aria-label="Search"/>
+        <a id="search-btn" class="a-button" onclick= "getCultureByKeyword()" type="submit"><i class="fa-solid fa-magnifying-glass"></i></a>
       </div>
 
-      <div>
+
         <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          <ul class="pagination justify-content-center">
+
           </ul>
         </nav>
-      </div>
+
 
 
 
