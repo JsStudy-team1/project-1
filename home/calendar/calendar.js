@@ -5,12 +5,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // full-calendar 생성하기
   calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
+    views:{
+      dayGridMonth: { // name of view
+        titleFormat: { month: 'short'}
+      }
+    },
     selectable: true,
 
     dateClick: function (info) {
       console.log('clicked' + info.dateStr);
-      // 클릭 이벤트
-      addEvetnToCalendar({start : info.dateStr});
+      setCurrentDate(info.dateStr);
     },
     // 이벤트 
     events: []

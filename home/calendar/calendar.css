@@ -1,9 +1,16 @@
 #calendar {
-background-color: #fff;
+  height: 100%;
+  background-color: #fff;
 }
 
-#calendar button{
+#calendar button {
   color: #222;
   background: var(--color-pink) !important;
   box-sizing: border-box !important;
+  border: none;
+}
+
+#calendar h2 {
+  font-size: 2em;
+  font-weight: 800;
 }
