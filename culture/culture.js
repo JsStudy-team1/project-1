@@ -1,8 +1,11 @@
 const API_KEY = '724c4f436f6777613735434441514d'
 let cultureList = []
 const menus = document.querySelectorAll(".menus button");
-
 menus.forEach(menu=>menu.addEventListener("click",(event)=>getCultureByCategory(event)))
+let totalResults = 0
+let page = 1
+const pageSize =10
+const pageGroup=5
 
 //받은 json파일 사용
 // const getDataApi = async() => {
@@ -45,12 +48,12 @@ const getCultureByKeyword = async () => {
 
 const render = () =>{
     let cultureHTML = cultureList.map((item) => 
-        `<div class ="row row-cols-1 row-cols-md-3 g-4">
-            <div class = "col">
-                <div class="card">
+        `<div class = "row">
+            <div class = "col-lg-3 col-md-6 col-sm-12">
+                <div class="card" style="width: 18rem;">
                     <img src="${item.MAIN_IMG}" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">[${item.CODENAME}] ${item.TITLE}</h5>
+                        <h3 class="card-title">[${item.CODENAME}] ${item.TITLE}</h3>
                         <p class="card-text">
 장소 : ${item.PLACE}
 날짜/시간 : ${item.DATE}
@@ -66,7 +69,9 @@ const render = () =>{
 };
 
 
+const pageNationRender = () => {
 
+}
 getLatestCulture()
 
 // 데이터 culturalEventInfo 필드에 있음
