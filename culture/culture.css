@@ -15,4 +15,18 @@ p{
 
 .card{
     padding: 12px 12px;
+    display: flex;
+    justify-content: center;
 }
+
+.btn-purple {
+    background-color: var(--color-purple);
+    box-sizing: border-box;
+    border: 3px solid #FFF;
+  }
+  
+  .btn-purple:hover {
+    box-sizing: border-box;
+    border: 3px solid var(--color-purple);
+    background-color: #fff;
+  }
