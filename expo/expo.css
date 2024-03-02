@@ -171,5 +171,9 @@
     font-weight: bold;
 }
 
-
+.img-size {
+    object-fit: cover;
+    height: 25em;
+    min-height: 500px;
+}
 
