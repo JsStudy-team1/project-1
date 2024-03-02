@@ -58,8 +58,7 @@ const getCultureByKeyword = async () => {
 
 const render = () =>{
     let cultureHTML = cultureList.map((item) => 
-        `<div class = "row">
-            <div class = "col">
+        `<div class = "col col-xxl-3">
                 <div class="card" style="width: 18rem;">
                     <img src="${item.MAIN_IMG}" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
@@ -71,8 +70,7 @@ const render = () =>{
                         <a href="${item.ORG_LINK}" class="card-link">홈페이지 바로가기</a>
                     </div>
                 </div>
-            </div>
-        </div>`
+            </div>`
         ).join("");
         
     document.getElementById("culture-board").innerHTML = cultureHTML;

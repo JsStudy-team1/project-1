@@ -1,3 +1,12 @@
+* {
+    --color-font: #222;
+    --color-light-gray: #CECECE;
+    --color-gray: #D9D9D9;
+    --color-blue: #BFDEF0;
+    --color-pink: #E9CED3;
+    --color-purple: #D2CEE9;
+  }
+
 .menus {
     display: flex;
     justify-content: center;
@@ -13,12 +22,34 @@ p{
     padding: 12px 12px;
     display: flex;
     justify-content: center;
-    margin: 15px 15px;
+    margin: 15px auto;
 }
 
-.card-group{
+.card-title{
+    font-size: 1.5em;
+    color: var(--color-font);
+    font-family: "Anek Telugu", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.card-text{
+    font-size: 1em;
+    color: var(--color-font);
+    font-family: "Anek Telugu", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, Helvetica, sans-serif;
+    line-height: 150%;
+}
+
+.card-link{
     display: flex;
     justify-content: center;
+    margin-top: 2em;
+}
+
+.card-link:hover{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    text-decoration:underline; 
 }
 
 .btn-purple {
@@ -30,10 +61,20 @@ p{
     border-radius: 20px;
   }
   
-  .btn-purple:hover {
+.btn-purple:hover {
     box-sizing: border-box;
     border: 3px solid var(--color-purple);
     background-color: #fff;
-  }
+ }
 
+@media screen and (max-width: 768px) {
+    .card{
+        padding: 12px 12px;
+        display: flex;
+        justify-content: center;
+        margin: 15px auto;
+    }
+
+    
+}
   
