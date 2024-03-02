@@ -77,9 +77,12 @@ function hideMessage(element) {
     return password1 === password2;
     }
 
-    // 생년월일 이벤트
-    const birthYearSelect = document.getElementById('birth-year');
+    // 생년월일 옵션 생성
     const currentYear = new Date().getFullYear();
+    const birthYearSelect = document.getElementById('birth-year');
+    const birthMonthSelect = document.getElementById('birth-month');
+    const birthDaySelect = document.getElementById('birth-day');
+
     for (let year = currentYear; year >= currentYear - 100; year--) {
         const option = document.createElement('option');
         option.value = year;
@@ -87,8 +90,6 @@ function hideMessage(element) {
         birthYearSelect.appendChild(option);
     }
 
-    // 월 옵션 생성
-    const birthMonthSelect = document.getElementById('birth-month');
     for (let month = 1; month <= 12; month++) {
         const option = document.createElement('option');
         option.value = month;
@@ -96,11 +97,102 @@ function hideMessage(element) {
         birthMonthSelect.appendChild(option);
     }
 
-    // 일 옵션 생성 (1일부터 31일까지)
-    const birthDaySelect = document.getElementById('birth-day');
     for (let day = 1; day <= 31; day++) {
         const option = document.createElement('option');
         option.value = day;
         option.textContent = day;
         birthDaySelect.appendChild(option);
     }
+
+// 이메일 
+
+let emailIdInput = document.getElementById('email-id');
+let emailDomainInput = document.getElementById('email-domain');
+let emailSelect = document.getElementById('email-select');
+let successMessage = document.querySelector('.email-success-message');
+let failureMessage = document.querySelector('.email-failure-message');
+
+emailIdInput.addEventListener('input', checkEmptyInput);
+emailDomainInput.addEventListener('input', checkEmptyInput);
+emailSelect.addEventListener('change', updateEmailDomain);
+
+// 커서가 입력 필드에 들어갈 때
+emailIdInput.addEventListener('focus', hideErrorMessage);
+emailDomainInput.addEventListener('focus', hideErrorMessage);
+
+// 커서가 입력 필드에서 나갈 때
+emailIdInput.addEventListener('blur', validateEmail);
+emailDomainInput.addEventListener('blur', validateEmail);
+
+// 이메일 유효성 검사
+function validateEmail() {
+    let emailId = emailIdInput.value;
+    let emailDomain = emailDomainInput.value;
+    let email = emailId + '@' + (emailSelect.value === 'type' ? emailDomain : emailSelect.value);
+
+    // 이메일 유효성 검사 정규식
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    // 입력창에 아무것도 없을 때, 다 완성되었을 때 에러 메시지 가리기
+    if ((email.trim() === '' && emailSelect.value !== 'type') || emailRegex.test(email)) {
+        successMessage.classList.add('hide');
+        failureMessage.classList.add('hide');
+    } else {
+        successMessage.classList.add('hide');
+        failureMessage.classList.remove('hide');
+    }
+}
+
+function updateEmailDomain() {
+    let selectedValue = emailSelect.value;
+    emailDomainInput.value = (selectedValue !== 'type') ? selectedValue : '';
+    validateEmail();
+}
+
+// 커서가 옮겨지면 숨기는 기능
+function hideErrorMessage() {
+    successMessage.classList.add('hide');
+    failureMessage.classList.add('hide');
+}
+
+function checkEmptyInput() {
+    validateEmail();
+}
+
+// 휴대전화 파트
+
+let phoneInput = document.getElementById('phone');
+let phoneError = document.getElementById('phone-error');
+
+phoneInput.addEventListener('input', checkEmptyPhone);
+
+// 커서가 입력 필드에 들어갈 때
+phoneInput.addEventListener('focus', hidePhoneError);
+
+// 커서가 입력 필드에서 나갈 때
+phoneInput.addEventListener('blur', validatePhone);
+
+// 휴대전화 유효성 검사
+function validatePhone() {
+    let phone = phoneInput.value.replace(/[^0-9]/g, ''); // 숫자 이외의 문자 제거
+    let phoneRegex = /^\d{11}$/; // 11자리 숫자인지 확인
+
+    if (phone.trim() === '' || phoneRegex.test(phone)) {
+        phoneError.classList.add('hide');
+    } else {
+        phoneError.classList.remove('hide');
+    }
+}
+
+function hidePhoneError() {
+    phoneError.classList.add('hide');
+}
+
+function checkEmptyPhone() {
+    validatePhone();
+}
+
+// 회원정보를 로컬 저장소에 저장하는 기능
+
+
+

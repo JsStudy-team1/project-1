@@ -98,24 +98,27 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
               <!--이메일-->
               <section id="email-area">
                   <label for="email">이메일</label>
-                  <input type="text" placeholder=""> @
-                  <input type="text">
-                  <select>
+                  <input id="email-id" type="text" placeholder=""> @
+                  <input id="email-domain" type="text">
+                  <select id="email-select">
                       <option value="type">직접 입력</option>
                       <option value="naver.com">naver.com</option>
                       <option value="gmail.com">gmail.com</option>
                       <option value="hanmail.net">hanmail.net</option>
                       <option value="nate.com">nate.com</option>
                   </select>
+                  <span class="email-success-message hide">사용 가능한 이메일입니다.</span>
+                  <span class="email-failure-message hide">올바른 이메일 형식이 아닙니다.</span>
               </section>
               <!--휴대전화-->
               <section id="phone-area">
                   <label for="phone">휴대전화</label>
-                      <input type="text" placeholder="휴대폰 번호 입력 ('-'을 제외 11자리 입력)">
+                      <input id="phone" type="text" placeholder="휴대폰 번호 입력 ('-'을 제외 11자리 입력)">
+                      <span id="phone-error" class="hide">올바른 휴대전화 번호를 입력하세요.</span>
               </section>
               <!--가입하기-->
               <section id="submit-area">
-                  <button>가입하기</button>
+                <button>가입하기</button>
               </section>
           </form>
       </div>
