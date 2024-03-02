@@ -38,16 +38,6 @@ input {
   box-shadow: none !important;
 }
 
-input {
-  box-sizing: border-box;
-  border-bottom: 1px solid #000 !important;
-}
-
-input:focus {
-  box-sizing: border-box;
-  border-bottom: 1px solid #000 !important;
-}
-
 .nav-container {
   background-color: #fff;
 }
