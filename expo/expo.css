@@ -55,7 +55,7 @@
 .expo-main-text {
     display: flex;
     justify-content: space-between;
-    margin: 0px 5px 10px 5px;
+    margin: 0px 5px 15px 5px;
 }
 
 .expo-main-text1 {
@@ -156,6 +156,7 @@
 .expo-card {
     display: flex;
     justify-content: space-between;
+    height: 360px !important;
 }
 
 /* a:hover > .card {
@@ -171,5 +172,35 @@
     font-weight: bold;
 }
 
+.img-size {
+    object-fit: cover;
+    height: 25em;
+    min-height: 500px;
+}
 
+/* 주간인기콘텐츠 */
+.mvpCard {
+    border: none !important;
+}
 
+.mvpCard-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 7px;
+}
+
+.mvpCard-img {
+    height: 280px !important;
+    object-fit: cover !important;
+}
+
+.mvp-motion {
+    height: 280px;
+    transition: all ease .4s;
+    overflow: hidden;
+}
+
+.mvpCard:hover .mvpCard-img {
+    transform: scale(1.1) rotate(3deg);
+    border-radius: 10px;
+}
