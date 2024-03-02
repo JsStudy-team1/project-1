@@ -62,29 +62,31 @@
         <button class="btn-purple">기타</button>
       </div>
     
-      <section id ="culture-board">
-        <div class ="row row-cols-1 row-cols-md-3 g-4">
-          <div class = "col">
-            <div class="card">
+      <section id ="culture-board" class="card-group row">
+          <div class="col col-xxl-3">
+            <div class="card" style="width: 18rem;">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8lmAZIa7FbsF9qMQ6R5I25zQ1kgEP_ClI-G2c-Gs-QecEmnmHbvcTl_kFKe9IqrBPx6g&usqp=CAU" class="card-img-top img-fluid" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h3 class="card-title">Card title</h3>
                 <p class="card-text">Some quick example text</p>
-                <a href="#" class="card-link">홈페이지 바로가기</a>
+                <a href="#" class="card-link" target="_blank">홈페이지 바로가기</a>
               </div>
             </div>
           </div>
-        </div>
       </section>
 
-      <div>
-        <input id ="search-input"/>
-        <button onclick= "getCultureByKeyword()">검색</button>
+      <div class = "input-group">
+        <input id="search-input" type="search" placeholder="검색어를 입력하세요" aria-label="Search"/>
+        <a id="search-btn" class="a-button" onclick= "getCultureByKeyword()" type="submit"><i class="fa-solid fa-magnifying-glass"></i></a>
       </div>
 
-      <div>
-        페이지네이션
-      </div>
+
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+
+          </ul>
+        </nav>
+
 
 
 
