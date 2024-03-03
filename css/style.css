@@ -70,7 +70,7 @@ input:autofill:active {
 
 /* a-버튼 */
 .a-button {
-  width: 80px;
+  padding: 0 0.7rem;
   height: 30px;
   line-height: 2.5em;
   text-align: center;
@@ -261,6 +261,25 @@ button.navbar-toggler{
 }
 
 /* MAIN */
+
+#main {
+  width: 100%;
+  background: center 100% url(../../img/bgi.png);
+}
+/* 
+#banner-container{
+  height: 150px;
+  background-color: rgba(255, 255, 255, .5);
+} */
+
+.h2-main{
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.btn-main{
+  padding: 0 0.7rem;
+}
 
 /* FOOTER 기본 값*/
 footer.container{
