@@ -196,6 +196,15 @@
   overflow: hidden;
   /* border: 1px solid var(--color-purple); */
 }
+
+.date-input{
+  border-bottom: 1px solid #000 !important;
+}
+
+.date-input:focus {
+  border-bottom: 1px solid #000 !important;
+}
+
 .calendar .goto-today button {
   padding: 5px 10px;
   border: 1px solid var(--color-purple);
