@@ -54,7 +54,7 @@
 /* 메인-공통 */
 .expo-main-text {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0px 5px 10px 5px;
     flex-wrap: wrap;
 }
