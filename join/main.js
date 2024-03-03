@@ -1,6 +1,9 @@
 // 1. 아이디 유효성 검사
-// 2. 비밀번호 일치
+// 2. 비밀번호 일치 유무
 // 3. 입력창 옮길 때마다 (에러,성공) 메시지 숨기게 하는 기능
+// 4. 생년월일 옵션 생성
+// 5. 이메일 유효성 검사
+// 4. 로컬저장소에 사용자 정보 저장
 
 let userIdInput = document.querySelector('#id')
 let failureMsg = document.querySelector('.failure-message')
@@ -11,9 +14,19 @@ const pwTestInput = document.querySelector('#password-retype')
 
 // 메시지를 숨기는 함수
 function hideMessage(element) {
-    element.classList.add('hide');
+    if (!element.classList.contains('hide')) {
+        element.classList.add('hide');
+    } 
     } 
 
+    document.getElementById('id').addEventListener('focus', function () {
+        hideMessage(document.querySelector('.failure-message'));
+        hideMessage(document.querySelector('.success-message'));
+    });
+    
+    document.getElementById('password-retype').addEventListener('focus', function () {
+        hideMessage(document.querySelector('.mismatch-message'));
+    });
   // 메시지 요소에 이벤트 핸들러 추가 (마우스 호버 시 숨김)
     document.querySelector('.failure-message').addEventListener('mouseover', function () {
     hideMessage(this);
@@ -27,18 +40,6 @@ function hideMessage(element) {
     hideMessage(this);
     });
 
-    // 생년월일
-    document.getElementById('birth-year').addEventListener('change', function () {
-        hideMessage(document.querySelector('.birth-error-message'));
-        });
-    
-    document.getElementById('birth-month').addEventListener('change', function () {
-        hideMessage(document.querySelector('.birth-error-message'));
-        });
-    
-    document.getElementById('birth-day').addEventListener('change', function () {
-        hideMessage(document.querySelector('.birth-error-message'));
-        });
 
   // 입력 필드에 포커스 이벤트 추가 (포커스가 이동하면 메시지를 숨김)
     document.getElementById('id').addEventListener('focus', function () {
@@ -194,5 +195,31 @@ function checkEmptyPhone() {
 
 // 회원정보를 로컬 저장소에 저장하는 기능
 
+document.getElementById('submit-area').addEventListener('click', function () {
+    // 1. 사용자 정보 수집
+    const userId = document.getElementById('id').value;
+    const userPassword = document.getElementById('password').value;
+    const userName = document.querySelector('#name-area input').value;
+    const userBirthYear = document.getElementById('birth-year').value;
+    const userBirthMonth = document.getElementById('birth-month').value;
+    const userBirthDay = document.getElementById('birth-day').value;
 
+    // 2. 사용자 정보 객체 생성
+    const userInfo = {
+        userId: userId,
+        userPassword: userPassword,
+        userName: userName,
+        userBirthYear: userBirthYear,
+        userBirthMonth: userBirthMonth,
+        userBirthDay: userBirthDay,
+    };
 
+    // 3. 로컬 스토리지에 정보 저장
+    localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+    // 4. 사용자 정보 확인을 위해 콘솔에 출력
+    console.log('사용자 정보:', userInfo);
+
+    alert("가입되었습니다.")
+
+});
