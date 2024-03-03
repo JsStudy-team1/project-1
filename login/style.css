@@ -14,7 +14,7 @@ form {
 }
 
 .login-form {
-    background-color: white;
+    background-color: #f4f4f4;
     border: none;
     padding: 50px;
 }
@@ -28,51 +28,38 @@ form {
 }
 
 .input-box > input{
-    padding:30px 0px 10px 0px;
+    padding:20px 0px 10px 20px;
     font-size:15pt;
     width:100%;
+    border-radius: 5px;
+    border: none !important;
 }
 
 
-input:placeholder-shown + label{
-    color:#aaa;
-    font-size:13pt;
-    top:15px;
+input::placeholder{
+    padding-left: 10px;
 }
 
-input:focus + label, label{
-    color:#8aa1a1;
-    font-size:10pt;
-    pointer-events: none;
-    position: absolute;
-    left:0px;
-    top:0px;
-    transition: all 0.2s ease ;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
+input:focus{
+    outline: none;
+
 }
-
-
-input:focus, input:not(:placeholder-shown){
-    border-bottom: solid 1px #8aa1a1;
-    outline:none;
-}
-
 
 input[type=button]{
-    color: black;
+    color: #666;
     border-radius: 10px;
     width:100%;
     height:35px;
     font-size: 15pt;
     font-weight:10px;
     margin-top:30px;
+    border: none !important;
+    background-color: white;
 }
 
-input[type=button]:hover {
-    font-size: larger;
-    color: #aaa;
+input[type=button]:active {
+    color: white;
+    background-color: #C5C6E6 !important;
 }
 
 input[type=button]:disabled {
@@ -81,9 +68,13 @@ input[type=button]:disabled {
     cursor: not-allowed;
 }
 
+#forgot-area{
+    text-align: center;
+}
+
 #forgot a{
     text-align: right;
-    font-size:8pt;
+    font-size:10pt;
     color:rgb(164, 164, 164);
     margin:10px 0px;
     position: relative;
@@ -93,4 +84,13 @@ input[type=button]:disabled {
     width: 1px;
     height: 8px;
     background-color: #000;
+}
+
+@media screen and (max-width: 768px) {
+    .login-form {
+    width: 80%;
+    }
+    #forgot-area{
+        text-align: center;
+    }
 }
