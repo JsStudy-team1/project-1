@@ -286,13 +286,16 @@ footer.container{
 #city-select {
   width: 200px;
   margin: 0 15px;
+  height: 40px;
   color: --color-font;
   font-weight: 700;
+  
 }
 .select-temp {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: --color-font;
 
   p {
@@ -345,7 +348,6 @@ footer.container{
 
 .container.clothes {
   margin-top: 2em;
-  width: 700px auto;
   height: 100vh auto;
   display: none;
   background-color: #fff;
@@ -410,11 +412,11 @@ footer.container{
 
 }
 
-@media screen and (max-width: 1020px) {
-  
+@media screen and (max-width: 992px) {
+
   .container.clothes {
     font-size: 0.8em;
-    width: 70vw;
+    max-width: 65vw;
   }
   .clothes-recomend {
     font-size: 1em;
@@ -422,22 +424,69 @@ footer.container{
   }
   .container.clothes-recomend {
     font-size: 1em;
-    width: 70vw;
+    max-width: 65vw;
+    
   }
 
 }
 
-@media screen and (max-width: 769px) {
-  .temp-area {
-    width: 100%;
+@media screen and (max-width: 768px) {
+  .containertoday-look{
+    width: 100vw;
   }
   .container.clothes {
-    width: 80vw;
+    width: 70vw;
+    display: inline-block;
     font-size: 0.8em;
   }
   .container.clothes-recomend {
     font-size: 1em;
-    width: 80vw;
+    width: 70vw;
+  }
+  .clothes-recomend {
+    font-size: 1em;
+    margin-bottom: 2em;
+  }
+  .recomend-btn {
+    display: inline-block;
+    font-size: 1.7em;
+  }
+  .select-temp p {
+    font-size: 1.4em;
+    font-weight: 700;
+  }
+  #weather-icon {
+    width: 80px;
+  }
+  #raining {
+    font-size: 1.1em;
+    color: #e36e8d;
+    font-weight: 600;
+    margin-top: 1em;
+  }
+  #city-select {
+    width: 140px;
+  }
+  #condition-icon {
+    width: 90px;
+  }
+
+  #recomend-list img{
+    width: 65px;
+  }
+
+
+}
+
+@media screen and (max-width: 575px) {
+
+  .container.clothes {
+    width: 100vw;
+    font-size: 0.8em;
+  }
+  .container.clothes-recomend {
+    font-size: 1em;
+    width: 100vw;
   }
   .clothes-recomend {
     font-size: 1em;
@@ -454,7 +503,7 @@ footer.container{
     width: 80px;
   }
   #raining {
-    font-size: 1.4em;
+    font-size: 1.1em;
     color: #e36e8d;
     font-weight: 600;
     margin-top: 1em;
@@ -469,9 +518,7 @@ footer.container{
   #recomend-list img{
     width: 65px;
   }
-  #raining {
-    font-size: 1.1em;
-  }
+
 
 }
 
