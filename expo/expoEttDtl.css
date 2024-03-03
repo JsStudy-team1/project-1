@@ -72,7 +72,7 @@
 /* 메인-카드정보 */ 
 .expo-card {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
     padding-top: 10px;
@@ -104,4 +104,24 @@
 
 .card-img-top {
     border-radius: 10px !important;
+}
+
+
+  .page-item .page-link{
+      background-color: #D2CEE9;
+      color: #222;
+      border-color: #efebe6;
+  }
+
+  .page-item:active{
+      background-color:#fff;
+  }
+
+  .page-item:focus{
+    background-color:#fff;
+  }
+
+  .active>.page-link {
+    border-color: #BFDEF0 !important;;
+    background-color: #BFDEF0 !important;
 }
