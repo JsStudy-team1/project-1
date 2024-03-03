@@ -14,7 +14,6 @@ body {
   font-size: 14px;
   box-sizing: border-box;
   word-break: keep-all;
-  height: 100vh;
 }
 
 a {
@@ -240,7 +239,6 @@ header {
 /* MAIN */
 
 main {
-  height: 100vh;
   background-color: #D2CEE9;
 }
 
@@ -255,11 +253,11 @@ footer.container{
   align-items: center;
   background-color: #BFDEF0;
   border-radius: 2em;
-  padding: 4em 1em ;
+  padding: 4em 0 ;
   margin-top: 1.3em;
   border: 3px solid #737373;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.114);
-
+  margin-bottom: 5em;
 }
 
 #weather {
@@ -298,7 +296,7 @@ footer.container{
   color: --color-font;
 
   p {
-      font-size: 2rem;
+      font-size: 2em;
       font-weight: 700;
   }
 }
@@ -318,7 +316,7 @@ footer.container{
 }
 .container.clothes-recomend {
   display: flex;
-  width: 700px auto;
+  width: 700px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -412,29 +410,51 @@ footer.container{
 
 }
 
+@media screen and (max-width: 1020px) {
+  
+  .container.clothes {
+    font-size: 0.8em;
+    width: 70vw;
+  }
+  .clothes-recomend {
+    font-size: 1em;
+    margin-bottom: 2em;
+  }
+  .container.clothes-recomend {
+    font-size: 1em;
+    width: 70vw;
+  }
+
+}
+
 @media screen and (max-width: 769px) {
   .temp-area {
+    width: 100%;
   }
   .container.clothes {
-    width: 75vw;
+    width: 80vw;
     font-size: 0.8em;
+  }
+  .container.clothes-recomend {
+    font-size: 1em;
+    width: 80vw;
   }
   .clothes-recomend {
     font-size: 1em;
     margin-bottom: 2em;
   }
   .recomend-btn {
-    font-size: 2em;
+    font-size: 1.7em;
   }
   .select-temp p {
-    font-size: 1.4rem;
+    font-size: 1.4em;
     font-weight: 700;
   }
   #weather-icon {
     width: 80px;
   }
   #raining {
-    font-size: 1.6em;
+    font-size: 1.4em;
     color: #e36e8d;
     font-weight: 600;
     margin-top: 1em;
@@ -443,19 +463,15 @@ footer.container{
     width: 140px;
   }
   #condition-icon {
-    width: 100px;
+    width: 90px;
   }
 
   #recomend-list img{
-    width: 70px;
+    width: 65px;
   }
   #raining {
     font-size: 1.1em;
   }
-  .container.clothes-recomend {
-    width: 100vw;
-    font-size: 1em;
-    width: 75vw;
-  }
+
 }
 
