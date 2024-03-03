@@ -38,16 +38,6 @@ input {
   box-shadow: none !important;
 }
 
-input {
-  box-sizing: border-box;
-  border-bottom: 1px solid #000 !important;
-}
-
-input:focus {
-  box-sizing: border-box;
-  border-bottom: 1px solid #000 !important;
-}
-
 .nav-container {
   background-color: #fff;
 }
@@ -80,7 +70,7 @@ input:autofill:active {
 
 /* a-버튼 */
 .a-button {
-  width: 80px;
+  padding: 0 0.7rem;
   height: 30px;
   line-height: 2.5em;
   text-align: center;
@@ -90,6 +80,7 @@ input:autofill:active {
 
 /* 보더-그레이-버튼 */
 .btn-white-border-gray {
+  color:var(--color-gray);
   background-color: #fff;
   box-sizing: border-box;
   border: 3px solid var(--color-gray);
@@ -103,12 +94,14 @@ input:autofill:active {
 
 /* 보더-블루-버튼 */
 .btn-white-border-blue {
+  color:var(--color-blue);
   background-color: #fff;
   box-sizing: border-box;
   border: 3px solid var(--color-blue);
 }
 
 .btn-white-border-blue:hover {
+  color:#FFF;
   box-sizing: border-box;
   border: 3px solid #fff;
   background-color: var(--color-blue);
@@ -116,12 +109,14 @@ input:autofill:active {
 
 /* 보더-핑크-버튼 */
 .btn-white-border-pink {
+  color:var(--color-pink);
   background-color: #fff;
   box-sizing: border-box;
   border: 3px solid var(--color-pink);
 }
 
 .btn-white-border-pink:hover {
+  color:#FFF;
   box-sizing: border-box;
   border: 3px solid #fff;
   background-color: var(--color-pink);
@@ -129,12 +124,14 @@ input:autofill:active {
 
 /* 보더-퍼플-버튼 */
 .btn-white-border-purple {
+  color:var(--color-purple);
   background-color: #fff;
   box-sizing: border-box;
   border: 3px solid var(--color-purple);
 }
 
 .btn-white-border-purple:hover {
+  color:#FFF;
   box-sizing: border-box;
   border: 3px solid #fff;
   background-color: var(--color-purple);
@@ -142,6 +139,7 @@ input:autofill:active {
 
 /* 그레이-버튼 */
 .btn-gray {
+  color: #FFF;
   background-color: var(--color-gray);
   font-weight: 800;
   box-sizing: border-box;
@@ -156,6 +154,7 @@ input:autofill:active {
 
 /* 블루-버튼 */
 .btn-blue {
+  color:var(--color-font);
   background-color: var(--color-blue);
   font-weight: 800;
   box-sizing: border-box;
@@ -170,6 +169,7 @@ input:autofill:active {
 
 /* 핑크-버튼 */
 .btn-pink {
+  color:var(--color-font);
   background-color: var(--color-pink);
   font-weight: 800;
   box-sizing: border-box;
@@ -184,6 +184,7 @@ input:autofill:active {
 
 /* 퍼플-버튼 */
 .btn-purple {
+  color:var(--color-font);
   background-color: var(--color-purple);
   box-sizing: border-box;
   border: 3px solid #FFF;
@@ -260,6 +261,27 @@ button.navbar-toggler{
 }
 
 /* MAIN */
+
+#main {
+  width: 100%;
+  background: center 100% url(../../img/bgi.png);
+}
+/* 
+#banner-container{
+  height: 150px;
+  background-color: rgba(255, 255, 255, .5);
+} */
+
+.text-area{
+  /* width: 200px; */
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 2em;
+}
+
+.h2-main{
+  font-size: 1.7rem;
+  font-weight: 800;
+}
 
 /* FOOTER 기본 값*/
 footer.container{

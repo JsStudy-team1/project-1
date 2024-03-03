@@ -1,8 +1,8 @@
-const apiKey = '4ddfaa3138bdeaa414259753468c11c1';
+const apiKeyWeather = '4ddfaa3138bdeaa414259753468c11c1';
 const city = '';
 
 function fetchWeather(city) {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKeyWeather}`;
 
     fetch(url)
         .then(response => {
@@ -60,7 +60,6 @@ function fetchWeather(city) {
                 case (tempInCelsius > 30):
                     items = 'glasses.png'; // 개더운 날씨
                     recomendItems = ['bikini.png', 'undershirt.png', 'halfPants.png'];
-
                     break;
                 default:
                     items = 'hoodie.png'; // 기본 이미지

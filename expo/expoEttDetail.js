@@ -1,39 +1,57 @@
 const API_KEY = '754d49465661626f3934786a576643';
 
-let sportList = [];
+let entertainList = [];
 let totalResult = 0;
 let page = 1;
 const pageSize = 8;
 const groupSize = 10;
 
 
-const getSportDetail = async() => {
+const getEttDetail = async() => {
     let firstNum = 2*(4*(page-1)) +1;
     let lastNum = page * 8;
 
-    let url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/stadiumScheduleInfo/${firstNum}/${lastNum}/`)
+    let url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/LOCALDATA_030709/${firstNum}/${lastNum}/`)
     const response = await fetch(url);
-    const sportData = await response.json();
+    const entertainData = await response.json();
 
     if(response.status === 200) {
-        sportList = sportData.stadiumScheduleInfo.row;
-        totalResult = sportData.stadiumScheduleInfo.list_total_count;
+        totalResult = entertainData.LOCALDATA_030709.list_total_count;
+        entertainList = entertainData.LOCALDATA_030709.row;
     }
-    stDetailRender();
+    ettDetailRender();
     paginationRender();
 }
 
-const stDetailRender = () => {
-    const sportDtlHTML = sportList.map(sportItem => `<a href= "${sportItem.LINK_URL}" class="item">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgA5cs1bbY9KKoITVjUce7umqQPlknhkDdAkhwGZhXkQ&s" class="card-img-top" onerror="this.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtl9ESKRo5HZYiroYXDvviVXOJoemv-q-brJeHTXsf_ed3lIejzMxBmRibg&s'; this.style='border:1px solid gray'">
-    <div class="card-body">
-    <h5 class="card-title info-title-font">${sportItem.TITLE}</h5>
-    <p class="card-text">${sportItem.CODE_TITLE_A}_${sportItem.CODE_TITLE_B}</p>
-    </div>
-    </a>`
-    ).join('');
+function ettDetailRender () {
+    let entertainDtlHTML = ``;
+    let imgSrc = "";
+    for(let i = 0; i < entertainList.length; i ++ ) {
+        let ettArr = entertainList[i];
+        let str = ettArr.BPLCNM;
+        
+        
+        if(str.includes("파크") || str.includes("랜드")) {
+            console.log("숫자 : " + i);
+            imgSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDuDdAa_010Jhw539NAwQgZg7a_4ChB04vaw&usqp=CAU";
+        } else if(str.includes("레포츠")) {
+            imgSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVVA-Svp3A367OVhJw0fAG4NnqWq1pLwRwaQ&usqp=CAU";
+        } else {
+            imgSrc = "	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2MXU2NDJjV9S3nvBasMR17eBrjhIpi4iTUw&usqp=CAU";
+        }
 
-    document.getElementById("expo-sport-card").innerHTML = sportDtlHTML;
+        entertainDtlHTML += `<div class="card item" style="width: 18rem;">
+        <img src="${imgSrc}"}" class="card-img-top">
+        <div class="card-body">
+        <h5 class="card-title info-title-font">${ettArr.BPLCNM}</h5>
+        <p class="card-text">영업상태: ${ettArr.DTLSTATENM}</p>
+        <p class="card-text">주소: [${ettArr.RDNPOSTNO == null || ettArr.RDNPOSTNO == "" ? "업데이트 예정" : ettArr.RDNPOSTNO}] 
+        ${ettArr.RDNWHLADDR == null || ettArr.RDNWHLADDR == "" ? "" : ettArr.RDNWHLADDR.length > 30 ? ettArr.RDNWHLADDR.substring(0, 30) + "..." : entertainList.RDNWHLADDR}</p>
+        </div>
+        </div>`;
+    }
+
+    document.getElementById("expo-ett-card").innerHTML = entertainDtlHTML;
 }
 
 const paginationRender = () => {
@@ -55,8 +73,6 @@ const paginationRender = () => {
 
     //firstPage
     let firstPage = lastPage - (groupSize - 1) <= 0 ? 1 : lastPage - (groupSize - 1);
-    console.log("firstPage : ", firstPage);
-    console.log("lastPage : ", lastPage);
 
     let paginationHTML = ``;
 
@@ -95,7 +111,7 @@ const paginationRender = () => {
 
 const moveToPage = (pageNum) => {
     page = pageNum;
-    getSportDetail();
+    getEttDetail();
 }
 
-getSportDetail();
+getEttDetail();

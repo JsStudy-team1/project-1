@@ -20,68 +20,110 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   <link
     href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:wght@400;700;900&display=swap"
     rel="stylesheet">
-  <!--  -->
-  <!-- 스와이퍼 js -->
+      <!-- 스와이퍼 js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+  <!--  -->
   <!-- 메인 -->
   <link rel="stylesheet" href="home.css" />
   <script defer src="home.js"></script>
-  <!-- #banner -->
-  <link rel="stylesheet" href="slide/slide.css" />
-  <script defer src="slide/slide.js"></script>
-  <!-- #todolist -->
-  <link rel="stylesheet" href="todolist/todolist.css" />
-  <script defer src="todolist/todolist.js"></script>
   <!-- #calendar -->
   <link rel="stylesheet" href="calendar/calendar.css" />
   <script defer src="calendar/calendar.js"></script>
+  
+  <link rel="stylesheet" href="slide/slide.css" />
+  <script defer src="slide/slide.js"></script>
 
 <body>
   <header id="header"></header>
 
   <main>
-    <div class="container">
-      <!-- #banner -->
-      <section id="banner" class="my-5">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
+    <section id="contents" class="container my-5">
+      <div class="calendar-area">
+        <div class="left">
+          <div class="calendar">
+            <div class="month">
+              <i class="fas fa-angle-left prev"></i>
+              <div class="date"></div>
+              <i class="fas fa-angle-right next"></i>
+            </div>
+            <div class="weekdays">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="days"></div>
+            <div class="goto-today">
+              <div class="goto">
+                <input type="text" placeholder="MM/YYYY" class="date-input me-3" />
+                <button class="goto-btn">Go</button>
+              </div>
+              <button class="today-btn">Today</button>
+            </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
         </div>
-      </section>
-
-      <section id="contents" class="px-3 px-md-4">
-        <!-- #calendar -->
-        <div class="row flex-lg-row-reverse align-items-center py-5">
-          <div id="calendar" class="col-12 col-lg-6 mx-auto mb-lg-auto mb-5 px-md-3 px-auto">
+        <div class="right">
+          <div class="today-date">
+            <div class="event-day"></div>
+            <div class="event-date"></div>
           </div>
-          <!-- #to_do_list -->
-          <div id="to_do_container" class="col-12 col-lg-6 mx-auto mb-lg-auto mb-5 px-md-3 px-auto">
-            <h3 id="cur_date" class="mb-3">그래서, 오늘 뭐해?</h3>
-            <form id="to_do_form" class="mx-auto col-12 d-flex justify-content-center gap-2">
-              <input id="to_do_input" required type="text" placeholder="일정" />
-              <button id="to_do_btn">추가</button>
-            </form>
-            <ul id="to_do_list" class="mt-3 col-10 col-md-6  mx-auto">
-            </ul>
+          <div class="events"></div>
+          <div class="add-event-wrapper">
+            <div class="add-event-header">
+              <div class="title mt-2">오늘은 뭐 해?</div>
+              <i class="fas fa-times close"></i>
+            </div>
+            <div class="add-event-body">
+              <div class="add-event-input">
+                <input type="text" placeholder="일정" class="event-name" />
+              </div>
+              <div class="add-event-input">
+                <input type="text" placeholder="시작 시간 (ex. 08:00)" class="event-time-from" />
+              </div>
+              <div class="add-event-input">
+                <input type="text" placeholder="종료 시간 (ex. 24:00)" class="event-time-to" />
+              </div>
+            </div>
+            <div class="add-event-footer">
+              <button class="add-event-btn btn-white-border-purple btn">
+                Add
+              </button>
+            </div>
           </div>
-      </section>
+        </div>
+        <button class="add-event">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+    </section>
     </div>
     </div>
     </section>
-    </div>
+
+    <section id="slide">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img class="img-fluid" src="../img/slide1.png" alt="#">
+          </div>
+          <div class="swiper-slide">
+            <img class="img-fluid" src="../img/slide2.png" alt="#">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+  </section>
+</main>
+
   </main>
 
   <footer id="footer"></footer>
-
   <!-- 스와이퍼 -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <!-- 폰트어썸 -->
   <script src="https://kit.fontawesome.com/631dd0ab94.js" crossorigin="anonymous"></script>
   <!-- 부트스트랩 -->
@@ -91,7 +133,6 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   <!-- 캘린더 -->
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js'></script>
-  <!-- JS 헤더 푸터 -->
 </body>
 
 </html>

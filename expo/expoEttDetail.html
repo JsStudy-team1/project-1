@@ -41,9 +41,11 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <!-- 폰트어썸 -->
   <script src="https://kit.fontawesome.com/631dd0ab94.js" crossorigin="anonymous"></script>
-  <!--  -->
-  <!-- <link rel="stylesheet" href="../css/style.css"> -->
-  <link rel="stylesheet" href="expo.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="expoNatureDtl.css">
+  <link rel="stylesheet" href="expoSportDtl.css">
+  <link rel="stylesheet" href="expoEttDtl.css">
+  <!-- <link rel="stylesheet" href="expoDetail.css"> -->
 
 <body>
   <header id="header"></header>
@@ -54,77 +56,29 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
     </div>
     <div>
       <button class="btn-behave-menu btn-expo-check" onclick="location.href='../culture/culture.html'">EXPO</button>
-      <button class="btn-behave-menu btn-activity-check" onclick="location.reload();">ACTIVITY</button>
+      <button class="btn-behave-menu btn-activity-check" onclick="location.href='expo.html';">ACTIVITY</button>
     </div>
   </section>
-
-  <!-- 상단 배너 -->
-  <div id="carouselExampleIndicators" class="section-height carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <a href='https://adventure.lotteworld.com/kor/main/index.do'><img src="https://adventure.lotteworld.com/image/2024/2/202402080519360250.jpg" class="d-block w-100 ad2-img img-size" alt="..."></a>
-      </div>
-      <div class="carousel-item">
-        <a href='https://phoenixhnr.co.kr/static/pyeongchang/snowpark/slope-lift'><img src="https://phoenixhnr.co.kr/api/attach/view/mainBanner/3330/image_p" class="d-block w-100 ad2-img img-size" alt="..."></a>
-      </div>
-      <div class="carousel-item">
-        <a href='https://www.knps.or.kr/front/portal/visit/visitCourseMain.do?parkId=120400&menuNo=7020093'><img src="https://www.knps.or.kr/portal/images/parkvisual/winter/120400.png" class="d-block w-100 ad2-img img-size" alt="..."></a>
-      </div>
-    </div>
-  </div>
 
   <main>
     <div class="container">
       <div class="expo-container">
-
-        <section class="expo-main">
-          <div class="section-height">
-            <div class="expo-main-text">
-              <span class="expo-main-text1">❄️겨울철 인기 콘텐츠</span>
-            </div>
-            <!-- 카드 -->
-            <div id="expo-mvp-card" class="expo-card expo-main-gap">
-            </div>
-          </div>
-
-          <div class="card-selection cardAll">
-            <!-- 카드 자연 -->
-            <div class="section-first">
-              <div class="expo-main-text">
-                <span class="expo-main-text1">🌳자연</span>
-                <span class="expo-main-text2"><a href="expoNatureDetail.html">전체보기</a></span>
-              </div>
-              <div id="expo-nature-card" class="expo-card">
-              </div>
-            </div>
-
-            <!-- 카드 엔터테인먼트 -->
+        <section class="section-height">
+            <!-- 카드 스포츠 -->
             <div class="section-height">
-              <div class="expo-main-text">
+                <div class="expo-main-text">
                 <span class="expo-main-text1">🎯엔터테인먼트</span>
-                <span class="expo-main-text2"><a href="expoEttDetail.html">전체보기</a></span>
-              </div>
-              <div id="expo-entertain-card" class="expo-card">
-              </div>
+                </div>
+                <div id="expo-ett-card" class="expo-card">
+                </div>
             </div>
 
-          <!-- 카드 스포츠 -->
-          <div class="section-height">
-            <div class="expo-main-text">
-              <span class="expo-main-text1">📢스포츠</span>
-              <span class="expo-main-text2"><a href="expoSportDetail.html">전체보기</a></span>
-            </div>
-            <div id="expo-sport-card" class="expo-card">
-            </div>
-          </div>
-        </div>
-      </section>
-
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    
+                </ul>    
+            </nav>
+        </section>
       </div>
     </div>
   </main>
@@ -183,7 +137,7 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
     });
   </script>
 
-  <script defer src="expo.js"></script>
+  <script defer src="expoEttDetail.js"></script>
 </body>
 
 </html>
