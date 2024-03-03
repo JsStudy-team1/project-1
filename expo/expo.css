@@ -7,8 +7,16 @@
     --color-purple: #D2CEE9;
   }
 
+.expo-main-gap {
+    padding-bottom: 30px;
+}
+
 .section-height {
     padding-top: 45px;
+}
+
+.section-first {
+    padding-top: 30px;
 }
 
 /* top */
@@ -89,7 +97,7 @@
 .expo-card {
     display: flex;
     justify-content: space-between;
-    height: 360px !important;
+    height: 330px !important;
 }
 
 /* a:hover > .card {
