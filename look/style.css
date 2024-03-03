@@ -258,7 +258,8 @@ footer.container{
   padding: 4em 1em ;
   margin-top: 1.3em;
   border: 3px solid #737373;
-  transition: opacity .35s, visibility .35s;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.114);
+
 }
 
 #weather {
@@ -317,10 +318,10 @@ footer.container{
 }
 .container.clothes-recomend {
   display: flex;
+  width: 700px auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 700px;
   gap: 0.5em;
   margin-top: 2em;
   font-size: 1.1em;
@@ -346,7 +347,7 @@ footer.container{
 
 .container.clothes {
   margin-top: 2em;
-  width: 700px;
+  width: 700px auto;
   height: 100vh auto;
   display: none;
   background-color: #fff;
@@ -411,9 +412,11 @@ footer.container{
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 769px) {
+  .temp-area {
+  }
   .container.clothes {
-    width: 90vw;
+    width: 75vw;
     font-size: 0.8em;
   }
   .clothes-recomend {
@@ -450,9 +453,9 @@ footer.container{
     font-size: 1.1em;
   }
   .container.clothes-recomend {
-    width: 90vw;
+    width: 100vw;
     font-size: 1em;
-    
+    width: 75vw;
   }
 }
 
