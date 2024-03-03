@@ -6,12 +6,58 @@
     --color-pink: #E9CED3;
     --color-purple: #D2CEE9;
   }
+/* top */
+.behave-top {
+  margin-top: 70px;
+  text-align: center;
+  font-family: "Anek Telugu", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, Helvetica, sans-serif;
+}
+
+.behave-top-title h1 {
+  font-size: 2.5em !important;
+  font-weight: bold;
+}
+
+.behave-top-title {
+  margin-bottom: 10px;
+}
+
+.btn-behave-menu {
+  border-radius: 34px;
+  background-color: white;
+  border: 3px solid var(--color-pink) ;
+  text-align: center;
+  font-size: 19px;
+  margin: 0px 10px;
+  width: 6em;
+  line-height: normal;
+  font-weight: 500;
+  padding-top: 5px;
+}
+
+.btn-expo-check {
+  background-color: var(--color-pink);
+}
+
+.btn-behave-menu:hover {
+  background-color: var(--color-pink);
+}
+
+.btn-behave-menu:focus {
+  background-color: var(--color-pink);
+}
 
 .menus {
     display: flex;
     justify-content: center;
     margin: 1em 0;
     flex-wrap: wrap;
+}
+
+.btn-total{
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
 }
 
 p{
@@ -23,6 +69,7 @@ p{
     display: flex;
     justify-content: center;
     margin: 15px auto;
+    width: 1em;
 }
 
 .card-title{
@@ -66,6 +113,12 @@ p{
     border: 3px solid var(--color-purple);
     background-color: #fff;
  }
+
+ .btn-purple:focus {
+  box-sizing: border-box;
+  border: 3px solid var(--color-purple);
+  background-color: #fff;
+}
 
  .input-group{
     display: flex;
@@ -115,6 +168,10 @@ p{
   .page-item:active{
       background-color:#fff;
   }
+
+  .page-item:focus{
+    background-color:#fff;
+  }
 @media screen and (max-width: 768px) {
     .card{
         padding: 12px 12px;
@@ -122,7 +179,9 @@ p{
         justify-content: center;
         margin: 15px auto;
     }
-
+    .menus{
+      display: none;
+    }
     
 }
   
