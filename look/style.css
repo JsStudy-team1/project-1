@@ -296,7 +296,7 @@ footer.container{
   color: --color-font;
 
   p {
-      font-size: 2rem;
+      font-size: 2em;
       font-weight: 700;
   }
 }
@@ -444,10 +444,10 @@ footer.container{
     margin-bottom: 2em;
   }
   .recomend-btn {
-    font-size: 1.8em;
+    font-size: 1.7em;
   }
   .select-temp p {
-    font-size: 1.2rem;
+    font-size: 1.4em;
     font-weight: 700;
   }
   #weather-icon {
