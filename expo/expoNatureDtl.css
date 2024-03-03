@@ -75,6 +75,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
+    padding-top: 10px;
 }
 
 /* a:hover > .card {
@@ -93,4 +94,14 @@
 .item {
     width: 23%;
     margin-bottom: 0.8em;
+}
+
+.pagination {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 30px !important;
+}
+
+.card-img-top {
+    border-radius: 10px !important;
 }

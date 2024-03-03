@@ -1,0 +1,46 @@
+
+#main {
+  width: 100%;
+  background: center 100% url(../../img/bgi.png);
+}
+/* 
+#banner-container{
+  height: 150px;
+  background-color: rgba(255, 255, 255, .5);
+} */
+
+.text-area{
+  /* width: 200px; */
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 2em;
+}
+
+.h2-main{
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.btn-main{
+  padding: 0 0.7rem;
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet{
+  background: var(--color-blue) !important;
+}
+
+#slide {
+  background-color: rgba(255, 255, 255, .5);
+}
