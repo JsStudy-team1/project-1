@@ -77,7 +77,7 @@ function fetchWeather(city) {
               messageElement.textContent = "한파주의보. 외출을 삼가하세요.";
               messageElement.classList.add("cold-message");
               messageElement.classList.remove("hot-message");
-            } else if (tempInCelsius > 25) {
+            } else if (tempInCelsius > 30) {
               messageElement.textContent = "폭염주의보. 외출을 삼가하세요.";
               messageElement.classList.add("hot-message");
               messageElement.classList.remove("cold-message");
