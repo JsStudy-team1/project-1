@@ -74,11 +74,11 @@ const getCultureByCategory = async (event) => {
     getCulture();
 };
 
-// const getCultureByKeyword = async () => {
-//     const keyword = document.getElementById("search-input").value
-//     url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20/${keyword}/${keyword}`)
-//     getCulture();
-// }
+const getCultureByKeyword = async () => {
+    const keyword = document.getElementById("search-input").value
+    url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20/${keyword}/${keyword}`)
+    getCulture();
+}
 
 const render = () =>{
     let cultureHTML = cultureList.map((item) => 
