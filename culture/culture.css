@@ -1,11 +1,12 @@
 * {
-    --color-font: #222;
-    --color-light-gray: #CECECE;
-    --color-gray: #D9D9D9;
-    --color-blue: #BFDEF0;
-    --color-pink: #E9CED3;
-    --color-purple: #D2CEE9;
-  }
+  --color-font: #222;
+  --color-light-gray: #CECECE;
+  --color-gray: #D9D9D9;
+  --color-blue: #BFDEF0;
+  --color-pink: #E9CED3;
+  --color-purple: #D2CEE9;
+}
+
 /* top */
 .behave-top {
   margin-top: 70px;
@@ -22,17 +23,22 @@
   margin-bottom: 10px;
 }
 
+.a-button.btn-behave-menu {
+  line-height: 2rem;
+}
+
 .btn-behave-menu {
-  border-radius: 34px;
+  /* border-radius: 34px; */
   background-color: white;
-  border: 3px solid var(--color-pink) ;
+  border: 3px solid var(--color-pink);
   text-align: center;
-  font-size: 19px;
-  margin: 0px 10px;
+  /* font-size: 19px; */
+  font-size: 20px;
+  /* margin: 0px 10px; */
   width: 6em;
-  line-height: normal;
+  line-height: 0;
   font-weight: 500;
-  padding-top: 5px;
+  /* padding-top: 5px; */
 }
 
 .btn-expo-check {
@@ -48,140 +54,141 @@
 }
 
 .menus {
-    display: flex;
-    justify-content: center;
-    margin: 1em 0;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+  flex-wrap: wrap;
 }
 
-.btn-total{
+.btn-total {
   display: flex;
   justify-content: center;
   margin: 1em 0;
 }
 
-p{
-    white-space:pre-wrap;
+p {
+  white-space: pre-wrap;
 }
 
-.card{
-    padding: 12px 12px;
-    display: flex;
-    justify-content: center;
-    margin: 15px auto;
-    width: 1em;
+.card {
+  padding: 12px 12px;
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+  width: 1em;
 }
 
-.card-title{
-    font-size: 1.5em;
-    color: var(--color-font);
-    font-family: "Anek Telugu", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, Helvetica, sans-serif;
-    margin: 0;
+.card-title {
+  font-size: 1.5em;
+  color: var(--color-font);
+  font-family: "Anek Telugu", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
-.card-text{
-    font-size: 1em;
-    color: var(--color-font);
-    font-family: "Anek Telugu", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, Helvetica, sans-serif;
-    line-height: 150%;
+.card-text {
+  font-size: 1em;
+  color: var(--color-font);
+  font-family: "Anek Telugu", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, Helvetica, sans-serif;
+  line-height: 150%;
 }
 
-.card-link{
-    display: flex;
-    justify-content: center;
-    margin-top: 2em;
+.card-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
 }
 
-.card-link:hover{
-    display: flex;
-    justify-content: center;
-    margin-top: 2em;
-    text-decoration:underline; 
+.card-link:hover {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  text-decoration: underline;
 }
 
 .btn-purple {
-    background-color: var(--color-purple);
-    box-sizing: border-box;
-    border: 3px solid #FFF;
-    padding: 0.5em 1em;
-    margin: 3px;
-    border-radius: 20px;
-  }
-  
-.btn-purple:hover {
-    box-sizing: border-box;
-    border: 3px solid var(--color-purple);
-    background-color: #fff;
- }
+  background-color: var(--color-purple);
+  box-sizing: border-box;
+  border: 3px solid #FFF;
+  padding: 0.5em 1em;
+  margin: 3px;
+  border-radius: 20px;
+}
 
- .btn-purple:focus {
+.btn-purple:hover {
   box-sizing: border-box;
   border: 3px solid var(--color-purple);
   background-color: #fff;
 }
 
- .input-group{
+.btn-purple:focus {
+  box-sizing: border-box;
+  border: 3px solid var(--color-purple);
+  background-color: #fff;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+}
+
+#search-input {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #222 !important;
+  /* border-radius: 0; */
+  transition: .2s ease-in !important;
+}
+
+#search-input:focus {
+  background-color: rgba(255, 255, 255, .2) !important;
+  /* border-radius: 24px; */
+}
+
+#search-btn {
+  width: 30px;
+  height: 30px;
+
+}
+
+#search-btn:hover,
+#search-btn:active {
+  opacity: .2 !important;
+}
+
+#search-btn i {
+  line-height: 2em;
+}
+
+.pagination {
+  margin-top: 1em;
+}
+
+.page-item .page-link {
+  background-color: #D2CEE9;
+  color: #222;
+  border-color: #efebe6;
+}
+
+.page-item:active {
+  background-color: #fff;
+}
+
+.page-item:focus {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 12px 12px;
     display: flex;
     justify-content: center;
     margin: 15px auto;
- }
-
- #search-input {
-    background: none;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #222 !important;
-    /* border-radius: 0; */
-    transition: .2s ease-in !important;
-  }
-  
-  #search-input:focus {
-    background-color: rgba(255, 255, 255, .2) !important;
-    /* border-radius: 24px; */
-  }
-  
-  #search-btn {
-    width: 30px;
-    height: 30px;
-    
-  }
-  
-  #search-btn:hover,
-  #search-btn:active {
-    opacity: .2 !important;
-  }
-  
-  #search-btn i {
-    line-height: 2em;
   }
 
-  .pagination {
-    margin-top: 1em;
-  }
-  
-  .page-item .page-link{
-      background-color: #D2CEE9;
-      color: #222;
-      border-color: #efebe6;
-  }
-  
-  .page-item:active{
-      background-color:#fff;
+  .menus {
+    display: none;
   }
 
-  .page-item:focus{
-    background-color:#fff;
-  }
-@media screen and (max-width: 768px) {
-    .card{
-        padding: 12px 12px;
-        display: flex;
-        justify-content: center;
-        margin: 15px auto;
-    }
-    .menus{
-      display: none;
-    }
-    
 }
-  

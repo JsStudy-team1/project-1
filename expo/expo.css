@@ -5,7 +5,7 @@
     --color-blue: #BFDEF0;
     --color-pink: #E9CED3;
     --color-purple: #D2CEE9;
-  }
+}
 
 .expo-main-gap {
     padding-bottom: 30px;
@@ -35,17 +35,22 @@
     margin-bottom: 10px;
 }
 
+.a-button.btn-behave-menu {
+    line-height: 2rem;
+}
+
 .btn-behave-menu {
-    border-radius: 34px;
+    /* border-radius: 34px; */
     background-color: white;
-    border: 3px solid var(--color-pink) ;
+    border: 3px solid var(--color-pink);
     text-align: center;
-    font-size: 19px;
-    margin: 0px 10px;
+    /* font-size: 19px; */
+    font-size: 20px;
+    /* margin: 0px 10px; */
     width: 6em;
-    line-height: normal;
+    line-height: 0;
     font-weight: 500;
-    padding-top: 5px;
+    /* padding-top: 5px; */
 }
 
 .btn-activity-check {
@@ -93,7 +98,7 @@
     justify-content: space-between;
 }
 
-/* 메인-카드정보 */ 
+/* 메인-카드정보 */
 .expo-card {
     display: flex;
     justify-content: space-between;
@@ -153,6 +158,6 @@
     border-radius: 10px;
 }
 
-.cardAll{
-    margin-top : 10px;
+.cardAll {
+    margin-top: 10px;
 }
