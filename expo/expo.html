@@ -53,8 +53,8 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
       <h1>이번 주말, 여기 갈랭?</h1>
     </div>
     <div>
-      <button class="btn-behave-menu btn-expo-check">EXPO</button>
-      <button class="btn-behave-menu btn-activity-check">ACTIVITY</button>
+      <button class="btn-behave-menu btn-expo-check" onclick="location.reload();">EXPO</button>
+      <button class="btn-behave-menu btn-activity-check" onclick="location.href='../culture/culture.html'">ACTIVITY</button>
     </div>
   </section>
 
@@ -67,23 +67,15 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://adventure.lotteworld.com/image/2024/2/202402080519360250.jpg" class="d-block w-100 ad2-img" alt="...">
+        <a href='https://adventure.lotteworld.com/kor/main/index.do'><img src="https://adventure.lotteworld.com/image/2024/2/202402080519360250.jpg" class="d-block w-100 ad2-img img-size" alt="..."></a>
       </div>
       <div class="carousel-item">
-        <img src="https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/01/09/9HUm/LRueEnNEKJ.jpg?width=3180&quality=70" class="d-block w-100 ad2-img" alt="...">
+        <a href='https://phoenixhnr.co.kr/static/pyeongchang/snowpark/slope-lift'><img src="https://phoenixhnr.co.kr/api/attach/view/mainBanner/3330/image_p" class="d-block w-100 ad2-img img-size" alt="..."></a>
       </div>
       <div class="carousel-item">
-        <img src="https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/01/09/i7W8/fAqbtrmLH0.jpg?width=3180&quality=70" class="d-block w-100 ad2-img" alt="...">
+        <a href='https://www.knps.or.kr/front/portal/visit/visitCourseMain.do?parkId=120400&menuNo=7020093'><img src="https://www.knps.or.kr/portal/images/parkvisual/winter/120400.png" class="d-block w-100 ad2-img img-size" alt="..."></a>
       </div>
     </div>
-    <button class="carousel-control-prev section-height" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next section-height" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 
   <main>
@@ -93,21 +85,19 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
         <section class="expo-main">
           <div class="section-height">
             <div class="expo-main-text">
-              <span class="expo-main-text1">✨주간 인기 콘텐츠</span>
+              <span class="expo-main-text1">❄️겨울철 인기 콘텐츠</span>
             </div>
             <!-- 카드 -->
             <div id="expo-mvp-card" class="expo-card">
             </div>
           </div>
 
-          <div class="section-height">
-            <!--
+          <!-- <div class="section-height">
             <div class="expo-main-text">
                 <span class="expo-main-text1">계절별</span>
             </div>
              카드 슬라이드 
-            <div id="behave-weather-card"> -->
-              <!--
+            <div id="behave-weather-card">
               <div class="card">
                 <img src="https://www.busanparadisehotel.co.kr/upload/202103/1614752559032.jpg" class="card-img" alt="...">
                 <div class="card-body">
@@ -131,34 +121,43 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
                   <p class="card-sub-title">부산</p>
                   <p class="card-info">[부산 해운대] 파라다이스호텔 부산 온 더 플레이트 뷔페 식사권</p>
                   <a href="#" class="btn btn-primary">Go somewhere</a>
-                  
                 </div>
               </div>
-              -->
             </div>
-          </div>
+          </div> -->
           
-          
-          <!-- 카드 자연 -->
-          <div class="section-height">
-            <div class="expo-main-text">
-              <span class="expo-main-text1">🌳자연</span>
-              <span class="expo-main-text2"><a href="expoNatureDetail.html">전체보기</a></span>
+          <div class="card-selection">
+            <!-- 카드 자연 -->
+            <div class="section-height">
+              <div class="expo-main-text">
+                <span class="expo-main-text1">🌳자연</span>
+                <span class="expo-main-text2"><a href="expoNatureDetail.html">전체보기</a></span>
+              </div>
+              <div id="expo-nature-card" class="expo-card">
+              </div>
             </div>
-            <div id="expo-nature-card" class="expo-card">
-            </div>
-          </div>
 
-          <!-- 카드 엔터테인먼트 -->
+            <!-- 카드 엔터테인먼트 -->
+            <div class="section-height">
+              <div class="expo-main-text">
+                <span class="expo-main-text1">🎯엔터테인먼트</span>
+                <span class="expo-main-text2"><a href="expoEttDetail.html">전체보기</a></span>
+              </div>
+              <div id="expo-entertain-card" class="expo-card">
+              </div>
+            </div>
+
+          <!-- 카드 스포츠 -->
           <div class="section-height">
             <div class="expo-main-text">
-              <span class="expo-main-text1">🎯엔터테인먼트</span>
-              <span class="expo-main-text2"><a href="expoEttDetail.html">전체보기</a></span>
+              <span class="expo-main-text1">📢스포츠</span>
+              <span class="expo-main-text2"><a href="expoSportDetail.html">전체보기</a></span>
             </div>
             <div id="expo-entertain-card" class="expo-card">
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       </div>
     </div>

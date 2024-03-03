@@ -34,10 +34,6 @@ form {
 }
 
 
-input::placeholder{
-    color:transparent;
-}
-
 input:placeholder-shown + label{
     color:#aaa;
     font-size:13pt;
@@ -93,3 +89,8 @@ input[type=button]:disabled {
     position: relative;
 }
 
+#forgot span{
+    width: 1px;
+    height: 8px;
+    background-color: #000;
+}
