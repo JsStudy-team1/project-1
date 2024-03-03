@@ -7,27 +7,50 @@ let page = 1
 const pageSize =8
 const groupSize=5
 
-let url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20`)
-
-let firstNum = 2*(4*(page-1)) +1;
+    let firstNum = 2*(4*(page-1)) +1;
     let lastNum = page * 8;
-const getCulture = async() => {
-    //100개의 데이터만 가져오기
-    firstNum = 2*(4*(page-1)) +1;
-    lastNum = page * 8;
-
-    url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/${firstNum}/${lastNum}/`)
-    const response = await fetch(url);
-    const cultureData = await response.json();
-
-    if(response.status === 200) {
-        cultureList = cultureData.culturalEventInfo.row;
-        totalResults = cultureData.culturalEventInfo.list_total_count;
-    }
-    render();
-    paginationRender();
+    let category = "";
     
-}
+    let url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20/${category}`)
+    
+    
+    const getCulture = async() => {
+        //100개의 데이터만 가져오기
+        // firstNum = 2*(4*(page-1)) +1;
+        // lastNum = page * 8;
+        
+    
+        //url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/${firstNum}/${lastNum}/${category}`)
+        const response = await fetch(url);
+        const cultureData = await response.json();
+    
+        if(response.status === 200) {
+            cultureList = cultureData.culturalEventInfo.row;
+            totalResults = cultureData.culturalEventInfo.list_total_count;
+        }
+        render();
+        paginationRender();
+        
+    }
+
+    
+// const getCulture = async() => {
+//     //100개의 데이터만 가져오기
+//     firstNum = 2*(4*(page-1)) +1;
+//     lastNum = page * 8;
+
+//     url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/${firstNum}/${lastNum}/`)
+//     const response = await fetch(url);
+//     const cultureData = await response.json();
+
+//     if(response.status === 200) {
+//         cultureList = cultureData.culturalEventInfo.row;
+//         totalResults = cultureData.culturalEventInfo.list_total_count;
+//     }
+//     render();
+//     paginationRender();
+    
+// }
 
 // const getLatestCulture = async () =>{
 //     url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20`)
@@ -42,20 +65,20 @@ const getCulture = async() => {
 // }
 
 const getCultureByCategory = async (event) => {
-    firstNum = 2*(4*(page-1)) +1;
-    lastNum = page * 8;
-    const category = event.target.textContent;
+    // firstNum = 2*(4*(page-1)) +1;
+    // lastNum = page * 8;
+    category = event.target.textContent;
     url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/${firstNum}/${lastNum}/${category}`);
     console.log("카테고리",category)
     console.log("menu",menus)
-    getCulture(); // getCulture 함수 호출이 완료될 때까지 기다립니다.
+    getCulture();
 };
 
-const getCultureByKeyword = async () => {
-    const keyword = document.getElementById("search-input").value
-    url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20/${keyword}/${keyword}`)
-    getCulture();
-}
+// const getCultureByKeyword = async () => {
+//     const keyword = document.getElementById("search-input").value
+//     url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo/1/20/${keyword}/${keyword}`)
+//     getCulture();
+// }
 
 const render = () =>{
     let cultureHTML = cultureList.map((item) => 
@@ -130,7 +153,7 @@ const paginationRender = () => {
         </a>
         </li>`;
     }
-
+console.log("클릭한페이지정보",page)
     document.querySelector(".pagination").innerHTML = paginationHTML;
 }
 
