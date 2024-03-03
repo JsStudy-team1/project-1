@@ -226,10 +226,10 @@ header {
   border-radius: 0;
   left: -30% !important;
 }
-
+/* 
 .dropdown-menu.show {
   width: 50% !important;
-}
+} */
 
 .nav-link{
   font-size: 1.2em;
