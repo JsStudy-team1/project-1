@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY OFF</title>
+  <!-- 파비콘 -->
+  <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="../img/favicon/manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="../img/favicon/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
+  <!-- 부트스트랩 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- 리셋 -->
+  <link href="
+https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
+" rel="stylesheet">
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <!-- 폰트어썸 -->
+  <script src="https://kit.fontawesome.com/631dd0ab94.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="expoNatureDtl.css">
+  <link rel="stylesheet" href="expoSportDtl.css">
+  <link rel="stylesheet" href="expoEttDtl.css">
+  <!-- <link rel="stylesheet" href="expoDetail.css"> -->
+
+<body>
+  <header id="header"></header>
+
+  <section class="behave-top">
+    <div class="behave-top-title">
+      <h1>이번 주말, 여기 갈랭?</h1>
+    </div>
+    <div>
+      <button class="btn-behave-menu btn-expo-check" onclick="location.href='expo.html'">EXPO</button>
+      <button class="btn-behave-menu btn-activity-check" onclick="location.href='../culture/culture.html'">ACTIVITY</button>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="expo-container">
+        <section class="section-height">
+            <!-- 카드 스포츠 -->
+            <div class="section-height">
+                <div class="expo-main-text">
+                <span class="expo-main-text1">🎯엔터테인먼트</span>
+                </div>
+                <div id="expo-ett-card" class="expo-card">
+                </div>
+            </div>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    
+                </ul>    
+            </nav>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+  <!-- 부트스트랩 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  </script>
+  <!-- JS 헤더 푸터 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loadComponent = function (url, callback) {
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            callback(xhr.responseText);
+          }
+        };
+        xhr.open('GET', url, true);
+        xhr.send();
+      };
+
+      const headerEl = document.getElementById('header');
+      if (headerEl) {
+        loadComponent('../component/header.html', function (headerContent) {
+          headerEl.innerHTML = headerContent;
+        });
+      };
+
+      const footerEl = document.getElementById('footer');
+      if (footerEl) {
+        // 'component/footer.html' 파일 로드
+        loadComponent('../component/footer.html', function (footerContent) {
+          // 새로운 div 요소를 생성합니다.
+          const tempDiv = document.createElement('div');
+
+          // 새로운 div에 HTML 내용을 설정
+          tempDiv.innerHTML = footerContent;
+
+          // tempDiv의 자식 노드들을 footerEl에 추가
+          while (tempDiv.firstChild) {
+            footerEl.appendChild(tempDiv.firstChild);
+          }
+
+          // this-year 클래스를 가진 요소 가져오기
+          const thisYear = document.querySelector('.this-year');
+
+          // this-year 요소에 현재 연도로 설정
+          if (thisYear) {
+            // console.log('thisYear:', thisYear);
+            thisYear.textContent = new Date().getFullYear();
+          }
+        });
+      }
+    });
+  </script>
+
+  <script defer src="expoEttDetail.js"></script>
+</body>
+
+</html>
