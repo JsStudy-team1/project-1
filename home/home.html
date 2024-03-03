@@ -20,6 +20,8 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   <link
     href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:wght@400;700;900&display=swap"
     rel="stylesheet">
+      <!-- 스와이퍼 js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!--  -->
   <!-- 메인 -->
   <link rel="stylesheet" href="home.css" />
@@ -27,6 +29,9 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   <!-- #calendar -->
   <link rel="stylesheet" href="calendar/calendar.css" />
   <script defer src="calendar/calendar.js"></script>
+  
+  <link rel="stylesheet" href="slide/slide.css" />
+  <script defer src="slide/slide.js"></script>
 
 <body>
   <header id="header"></header>
@@ -98,9 +103,26 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
     </div>
     </section>
 
+    <section id="slide">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img class="img-fluid" src="../img/slide1.png" alt="#">
+          </div>
+          <div class="swiper-slide">
+            <img class="img-fluid" src="../img/slide2.png" alt="#">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+  </section>
+</main>
+
   </main>
 
   <footer id="footer"></footer>
+  <!-- 스와이퍼 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- 폰트어썸 -->
   <script src="https://kit.fontawesome.com/631dd0ab94.js" crossorigin="anonymous"></script>
