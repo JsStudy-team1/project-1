@@ -72,13 +72,14 @@
     color: white;
 }
 
-#id-area button:hover{
+#id-area button:active{
     font-size: larger;
 }
 
 #id-area span{
     font-size: small !important;
     padding-left: 5px;
+    color: red;
 }
 
 .hide {
@@ -92,6 +93,7 @@
 #pw-area span{
     font-size: small;
     padding-left: 5px;
+    color: red;
 }
 
 #birth-area label{
@@ -109,6 +111,7 @@
     font-weight: 400;
     align-items: center;
     margin-bottom: 10px;
+    background-color: white;
 }
 
 #gender-area label{
@@ -121,11 +124,12 @@
     padding: 10px 0 5px 15px;
     border-radius: 4px;
     border: 1px solid #ccc;
-    background-color: #f4f4f4;
+    background-color: white;
     color: #383838;
     font-weight: 400;
     align-items: center;
     margin-bottom: 10px;
+    
 }
 
 #email-area label{
@@ -141,7 +145,7 @@
     height: 40px;
     border-radius: 4px;
     border: 1px solid #ccc;
-    background-color: #f4f4f4;
+    background-color: white;
     color: #383838;
     font-weight: 400;
     align-items: center;
@@ -151,11 +155,13 @@
 #email-area span{
     font-size: small;
     padding-left: 5px;
+    color: red;
 }
 
 #phone-area span{
     font-size: small;
     padding-left: 5px;
+    color: red;
 }
 #submit-area{
     display: flex;
@@ -163,15 +169,15 @@
     padding: 10px;
 }
 
-#submit-area button{
+#submit-area input{
     width: 30%;
     border-radius: 4px;
-    background-color: #f4f4f4;
+    background-color: white;
     color: #383838;
     font-weight: bold;
     padding: 10px;
 }
 
-#submit-area button:hover{
-    font-size: larger;
+#submit-area input:active{
+    background-color: #f4f4f4;
 }
