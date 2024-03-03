@@ -1,0 +1,177 @@
+#content {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#content h1{
+    font-size: 30px;
+    margin: 10px;
+}
+
+#content form{
+    display: flex;
+    flex-direction: column;
+}
+
+#content section{
+    margin: 5px;
+}
+
+
+#content section label{
+    font-weight: bold;
+    margin: 10px;
+}
+
+#content input{
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc !important;
+    border-radius: 4px;
+}
+
+
+#content button{
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+#id-area{
+    position: relative;
+    overflow: hidden;
+}
+
+#id-area label{
+    display: block;
+    margin-bottom: 10px !important;
+
+}
+
+#id-area input{
+    width: 65%;
+}
+
+#id-area button{
+    width: 30%;
+    height: 40px;
+    top: 15px;
+    bottom: -5px;
+    right: 18px;
+    margin: auto 0;
+    border-radius: 5px;
+    border: 1px solid #ccc !important;
+    background-color: #C5C6E6 !important;
+    color: white;
+}
+
+#id-area button:hover{
+    font-size: larger;
+}
+
+#id-area span{
+    font-size: small !important;
+    padding-left: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+#pw-area{
+    overflow: hidden;
+}
+
+#pw-area span{
+    font-size: small;
+    padding-left: 5px;
+}
+
+#birth-area label{
+    display: block;
+}
+
+#birth-area select{
+    width: 31%;
+    height: 40px;
+    padding: 10px 0 5px 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    color: #383838;
+    font-weight: 400;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#gender-area label{
+    display: block;
+}
+
+#gender-area select{
+    width: 31%;
+    height: 40px;
+    padding: 10px 0 5px 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    color: #383838;
+    font-weight: 400;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#email-area label{
+    display: block;
+}
+
+#email-area input{
+    width: 30%;
+}
+
+#email-area select{
+    width: 30%;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    color: #383838;
+    font-weight: 400;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#email-area span{
+    font-size: small;
+    padding-left: 5px;
+}
+
+#phone-area span{
+    font-size: small;
+    padding-left: 5px;
+}
+#submit-area{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#submit-area button{
+    width: 30%;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    color: #383838;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#submit-area button:hover{
+    font-size: larger;
+}
