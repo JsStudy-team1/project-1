@@ -261,26 +261,6 @@ button.navbar-toggler{
 }
 
 /* MAIN */
-
-#main {
-  width: 100%;
-  background: center 100% url(../../img/bgi.png);
-}
-/* 
-#banner-container{
-  height: 150px;
-  background-color: rgba(255, 255, 255, .5);
-} */
-
-.h2-main{
-  font-size: 1.7rem;
-  font-weight: 800;
-}
-
-.btn-main{
-  padding: 0 0.7rem;
-}
-
 /* FOOTER 기본 값*/
 footer.container{
   background: none;

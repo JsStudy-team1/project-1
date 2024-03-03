@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   new Swiper('.mySwiper', {
     slidesPerView: 1,
     loop: true,
+    effect: "fade",
     autoplay: {
       delay: 2000 // 시간 설정
     },
