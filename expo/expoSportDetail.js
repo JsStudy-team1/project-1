@@ -8,18 +8,14 @@ const groupSize = 10;
 
 
 const getSportDetail = async() => {
-    //100개의 데이터만 가져오기
     let firstNum = 2*(4*(page-1)) +1;
     let lastNum = page * 8;
 
     let url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/stadiumScheduleInfo/${firstNum}/${lastNum}/`)
     const response = await fetch(url);
-    console.log("response : ", response);
     const sportData = await response.json();
 
     if(response.status === 200) {
-        // if(sportData.)
-        console.log("sportData : ", sportData);
         sportList = sportData.stadiumScheduleInfo.row;
         totalResult = sportData.stadiumScheduleInfo.list_total_count;
     }
