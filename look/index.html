@@ -50,9 +50,8 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
   <header id="header"></header>
 
   <main>
-    <div class="container">
+    <div class="container today-look">
         <div class="temp-area">
-            <br /><br /><br />
             <div class="select-temp"><p>지금</p>
             <select id="city-select" class="form-select form-select-lg mb-3" aria-label="Large select example">
                 <option selected>지역 선택</option>
@@ -62,21 +61,48 @@ https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
                 <option value="Gwangju">광주</option>
                 <option value="Jeju">제주</option>
                 <option value="Wonju">강원도</option>
+                <option value="Hongkong">홍콩</option>
+                <option value="Guiuan">필리핀</option>
+                <option value="Singapore">싱가포르</option>
+                <option value="Gao">말리</option>
               </select>
               <p>의 기온은?</p>
             </div>
             <div id="weather">
+  
                 <div class="weather-temp">
+                  <p id="raining"><i class="fa-solid fa-dog"></i></p>
+
                 <img id="weather-icon" src="" alt="Weather icon">
                 <p><span id="temperature">Loading...</span>°C</p>
-            </div>
-            <div class="clothes-container">
-            <img id="condition-icon" src="" alt="Condition Icon">
-          </div>
-            </div>
+              </div>
+                <div class="container clothes-recomend">
+                  날씨 별 오늘 입을 옷 추천받기
+                <button type="button" class="recomend-btn">
+                  오늘 뭐 입지? <i class="fa-solid fa-shirt"></i>
+                  </button>
+                </div>
+            
+
               
-      
+
+            <div id="clothes" class="container clothes">
+              <div class="clothes-container">
+                <label>필수템</label>
+                <img id="condition-icon" src="" alt="Condition Icon">
+              </div>
+              <div class="recomend-container">
+                <label>추천템</label>
+                <div id="recomend-list">
+                <img id="recomend-icon" src="" alt="recomend Icon">
+              </div>
+          </div>
+          <p id="weather-message" class="weather-message"></p>
+          </div>
+        
+        </div>
     </div>
+  </div>
   </main>
   
   <footer id="footer"></footer>
