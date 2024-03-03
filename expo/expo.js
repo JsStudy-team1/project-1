@@ -1,7 +1,9 @@
 const API_KEY = '754d49465661626f3934786a576643'; //ponstman(API 호출하는 도구)에서 갖고옴
 
 let url = "";
+let mvpList = [];  //계절별 인기콘텐츠
 let cardInfoList = [];  //자연
+let entertainList = [];  //엔터테인먼트
 let sportList = [];  //스포츠
 let response = '';  //json파일 가져오기
 
@@ -81,28 +83,60 @@ function cardNatureRender() {
 }
 
 /* 엔터테인먼트 */
-const getNCardEntertain =  async() => {
-    response = await fetch('expoJson/seoulPark.json');
-    const infoData = await response.json();
+const getCardEntertain =  async() => {
+    url = new URL(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/LOCALDATA_030709/1/4/`);
+    const response = await fetch(url);
+    const entertainData = await response.json();
+    console.log("entertainData : ", entertainData);
 
-    cardInfoList = infoData.DATA;
+    if(response.status === 200) {
+        entertainList = entertainData.LOCALDATA_030709.row;
+    }
 
     cardEntertainRender();
 }
 
 function cardEntertainRender() {
-    let resultHTML = [];
+    // let resultHTML = [];
 
-    //처음엔 4개 정보만 보여줌 (전체보기를 클릭하면 전체개수)
-    for(let i = 0; i < 4; i ++) {
-        let cardInfoArr = cardInfoList[i];
-            resultHTML += `<a href= "${cardInfoArr.template_url}" class="card" style="width: 18rem;">
-            <img src="${cardInfoArr.p_img}" class="card-img-top" onerror="this.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtl9ESKRo5HZYiroYXDvviVXOJoemv-q-brJeHTXsf_ed3lIejzMxBmRibg&s'; this.style='border:1px solid gray'">
-            <div class="card-body">
-            <h5 class="card-title info-title-font">${cardInfoArr.p_park}</h5>
-            <p class="card-text">${cardInfoArr.p_list_content == null || cardInfoArr.p_list_content == "" ? "내용없음" : cardInfoArr.p_list_content.length > 50 ? cardInfoArr.p_list_content.substring(0, 50) + "..." : cardInfoArr.p_list_content}</p>
-            </div>
-            </a>`
+    // //처음엔 4개 정보만 보여줌 (전체보기를 클릭하면 전체개수)
+    // for(let i = 0; i < 4; i ++) {
+    //     let entertainArr = entertainList[i];
+    //         resultHTML += `<a href= "${entertainArr.template_url}" class="card" style="width: 18rem;">
+    //         <img src="${entertainArr.p_img}" class="card-img-top" onerror="this.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtl9ESKRo5HZYiroYXDvviVXOJoemv-q-brJeHTXsf_ed3lIejzMxBmRibg&s'; this.style='border:1px solid gray'">
+    //         <div class="card-body">
+    //         <h5 class="card-title info-title-font">${entertainArr.BPLCNM}</h5>
+    //         <p class="card-text">영업상태: ${entertainArr.DTLSTATENM}</p>
+    //         <p class="card-text">주소: [${entertainArr.RDNPOSTNO == null || entertainArr.RDNPOSTNO == "" ? "업데이트 예정" : entertainArr.RDNPOSTNO}] 
+    //         ${entertainArr.RDNWHLADDR == null || entertainArr.RDNWHLADDR == "" ? "" : entertainArr.RDNWHLADDR.length > 50 ? entertainArr.RDNWHLADDR.substring(0, 50) + "..." : entertainArr.RDNWHLADDR}</p>
+    //         </div>
+    //         </a>`
+    // }
+
+    let resultHTML = ``;
+    let imgSrc = "";
+    for(let i = 0; i < 4; i ++ ) {
+        let ettArr = entertainList[i];
+        let str = ettArr.BPLCNM;
+        
+        if(str.includes("파크") || str.includes("랜드")) {
+            console.log("숫자 : " + i);
+            imgSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDuDdAa_010Jhw539NAwQgZg7a_4ChB04vaw&usqp=CAU";
+        } else if(str.includes("레포츠")) {
+            imgSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVVA-Svp3A367OVhJw0fAG4NnqWq1pLwRwaQ&usqp=CAU";
+        } else {
+            imgSrc = "	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2MXU2NDJjV9S3nvBasMR17eBrjhIpi4iTUw&usqp=CAU";
+        }
+
+        resultHTML += `<div class="card item" style="width: 18rem;">
+        <img src="${imgSrc}"}" class="card-img-top">
+        <div class="card-body">
+        <h5 class="card-title info-title-font">${ettArr.BPLCNM}</h5>
+        <p class="card-text">영업상태: ${ettArr.DTLSTATENM}</p>
+        <p class="card-text">주소: [${ettArr.RDNPOSTNO == null || ettArr.RDNPOSTNO == "" ? "업데이트 예정" : ettArr.RDNPOSTNO}] 
+        ${ettArr.RDNWHLADDR == null || ettArr.RDNWHLADDR == "" || ettArr.RDNWHLADDR == undefined ? "" : ettArr.RDNWHLADDR.length > 30 ? ettArr.RDNWHLADDR.substring(0, 30) + "..." : entertainList.RDNWHLADDR}</p>
+        </div>
+        </div>`;
     }
 
     document.getElementById("expo-entertain-card").innerHTML = resultHTML;
@@ -141,7 +175,7 @@ function cardSportRender() {
 
 getCardMvp();
 getNCardNature();
-getNCardEntertain();
+getCardEntertain();
 getCardSport()
 
 
