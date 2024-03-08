@@ -483,10 +483,12 @@ footer.container{
   .container.clothes {
     width: 100vw;
     font-size: 0.8em;
+    padding: 0;
   }
   .container.clothes-recomend {
     font-size: 1em;
     width: 100vw;
+    
   }
   .clothes-recomend {
     font-size: 1em;

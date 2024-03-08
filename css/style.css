@@ -159,11 +159,12 @@ input:autofill:active {
   font-weight: 800;
   box-sizing: border-box;
   border: 3px solid #FFF;
+  padding: 0 1em;
 }
 
 .btn-blue:hover {
   box-sizing: border-box;
-  border: 3px solid var(--color-blue);
+  border: 3px solid #BFDEF0;
   background-color: #fff;
 }
 
@@ -283,8 +284,14 @@ button.navbar-toggler{
   font-weight: 800;
 }
 
+.img-fluid {
+  padding: 1em;
+}
+
 /* FOOTER 기본 값*/
 footer.container{
   background: none;
 
 }
+
+
